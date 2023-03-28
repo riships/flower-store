@@ -3,10 +3,11 @@ import About from "./About";
 import Contact from "./Contact";
 import Home from "./Home";
 import Work from "./Work";
+import { Navbar, Container, Nav } from 'react-bootstrap';
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
 
 
-function Navbar() {
+function MenuList() {
     const menuItems = [
         {
             text: "Home",
@@ -29,16 +30,20 @@ function Navbar() {
         <>
 
             <BrowserRouter>
-
-                <nav>
-                    <ul>
-                        {menuItems.map((menuItem, index) => (
-                            <li key={index}>
-                                <Link to={menuItem.link}>{menuItem.text}</Link>
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
+                <Navbar bg="light" variant="light" expand="lg" >
+                    <Container>
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <Navbar.Collapse id="basic-navbar-nav">
+                            <Nav className="me-auto">
+                                {menuItems.map((menuItem, index) => (
+                                    <div key={index}>
+                                        <Link to={menuItem.link}>{menuItem.text}</Link>
+                                    </div>
+                                ))}
+                            </Nav>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar >
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/about' element={<About />} />
@@ -46,9 +51,9 @@ function Navbar() {
                     <Route path='/work' element={<Work />} />
                 </Routes>
 
-            </BrowserRouter>
+            </BrowserRouter >
         </>
     );
 };
 
-export default Navbar;
+export default MenuList;
