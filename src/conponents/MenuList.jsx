@@ -11,8 +11,6 @@ import Singleproduct from "./Singleproduct";
 import styled from 'styled-components';
 import Errorpage from "./Errorpage";
 import Cart from "./Cart";
-// import { CSSTransition } from 'react-transition-group';
-
 
 const Wrapper = styled.nav``;
 
@@ -38,10 +36,6 @@ function MenuList() {
         {
             text: "Work",
             link: "/work"
-        },
-        {
-            text: "Signle Product",
-            link: "/singleproduct/:id"
         }
 
     ];
@@ -51,7 +45,7 @@ function MenuList() {
             <BrowserRouter>
                 <Wrapper className="hamburger-menu hdr_menu">
                     <label onClick={toggleMenu} for="menu_toggle" className="menu_btn">
-                        <span></span>
+                        <span className={`menu_btn__inactive ${isOpen ? 'menu_btn__active' : ''}`}></span>
                     </label>
 
                     <div className={`menu_box ${isOpen ? 'show' : ''}`}>
@@ -60,8 +54,10 @@ function MenuList() {
                                 <Link to={menuItem.link}>{menuItem.text}</Link>
                             </div>
                         ))}
-                        <div className="mnu_link">
-                            <Link to="/cart"><BsFillCartFill />  </Link>
+                        <div className="mnu_link cart-trolley--link">
+                            <Link to="/cart"><BsFillCartFill className="cart-trolley" />
+                                <span className="cart-total--item">10</span>
+                            </Link>
                         </div>
                     </div>
 
