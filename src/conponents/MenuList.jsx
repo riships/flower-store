@@ -69,7 +69,6 @@ function MenuList() {
                     {isOpen && (
                         <div className="menu_box">
                             {menuItems.map((menuItem, index) => (
-
                                 <div className="mnu_link" key={index}>
                                     <Link to={menuItem.link}>{menuItem.text}</Link>
                                 </div>
