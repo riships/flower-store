@@ -50,7 +50,7 @@ function MenuList() {
 
             <BrowserRouter>
                 <Wrapper className="hamburger-menu hdr_menu">
-                    <label onClick={toggleMenu} for="menu_toggle" className={`menu_btn ${isOpen ? 'menu_toggle' : ''}`}>
+                    <label onClick={toggleMenu} for="menu_toggle" className="menu_btn">
                         <span></span>
                     </label>
 
@@ -60,10 +60,11 @@ function MenuList() {
                                 <Link to={menuItem.link}>{menuItem.text}</Link>
                             </div>
                         ))}
+                        <div className="mnu_link">
+                            <Link to="/cart"><BsFillCartFill />  </Link>
+                        </div>
                     </div>
-                    <div className="mnu_link">
-                        <Link to="/cart"><BsFillCartFill />  </Link>
-                    </div>
+
                 </Wrapper>
 
                 <Routes>
