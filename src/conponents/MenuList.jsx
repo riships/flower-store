@@ -12,7 +12,9 @@ import styled from 'styled-components';
 import Errorpage from "./Errorpage";
 import Cart from "./Cart";
 
-const Wrapper = styled.nav``;
+const Wrapper = styled.header`
+    height:70px;
+`;
 
 
 function MenuList() {
@@ -51,7 +53,7 @@ function MenuList() {
                     <div className={`menu_box ${isOpen ? 'show' : ''}`}>
                         {menuItems.map((menuItem, index) => (
                             <div className="mnu_link" key={index}>
-                                <Link to={menuItem.link}>{menuItem.text}</Link>
+                                <Link onClick={toggleMenu} to={menuItem.link}>{menuItem.text}</Link>
                             </div>
                         ))}
                         <div className="mnu_link cart-trolley--link">
@@ -60,9 +62,7 @@ function MenuList() {
                             </Link>
                         </div>
                     </div>
-
                 </Wrapper>
-
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/about' element={<About />} />
@@ -72,7 +72,6 @@ function MenuList() {
                     <Route path="/cart" element={<Cart />} />
                     <Route path="*" element={<Errorpage />} />
                 </Routes>
-
             </BrowserRouter >
         </>
     );
