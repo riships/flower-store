@@ -1,0 +1,23 @@
+.hero-section-image {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+figure {
+    position: relative;
+}
+
+figure::after {
+    content: "";
+    width: 80%;
+    height: 80%;
+    background-color: #6CE6F54D;
+    position: absolute;
+    left: 50px;
+    top: 5px;
+    z-index: -1;
+}

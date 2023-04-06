@@ -1,8 +1,13 @@
-import React from 'react'
+import { useProductFlowers } from './context/productcontext';
+
 
 function Contact() {
+    const myName = useProductFlowers();
     return (
-        <div>Contact</div>
+        <>
+            {myName}
+            <div>Contact</div>
+        </>
     )
 }
 
