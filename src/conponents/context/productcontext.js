@@ -19,14 +19,14 @@ const AppProvider = ({ children }) => {
             const res = await axios.get(url);
             const flowers = await res.data;
             // console.log(flowers);
-            dispatch({ type: "MY_API_DATA", payload: flowers });
+            dispatch({ type: "SET_API_DATA", payload: flowers });
         } catch (error) {
             dispatch({ type: "API_ERROR" });
 
         }
 
     };
-    useEffect = (() => {
+    useEffect(() => {
         getFlowers(API);
     }, []);
     return (
