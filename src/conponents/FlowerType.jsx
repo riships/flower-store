@@ -12,15 +12,18 @@ function FlowerType() {
     return (
         <div>
             <h1>Flower Type</h1>
-            <div >
+            <div className="flowerTyp">
                 {flowerType.map((flower, index) => {
                     return (
                         <div key={index} className="product-card">
                             <img src={flower.image} alt={flower.name} className="product-image" />
                             <div className="product-details">
-                                <h2 className="product-name">{flower.name}</h2>
-                                <p className="product-price">{flower.description}</p>
-                                <p className="product-price">{flower.description}</p>
+                                <div className="nm-and-prc">
+                                    <h2 className="product-name">{flower.name}</h2>
+                                    <h2 className="product-price">{flower.price}</h2>
+                                </div>
+
+                                <p className="product-dis">{flower.description.slice(0, 100)}</p>
                                 {/* <div className="product-rating">
                                     {Array.from(Array(rating)).map((_, i) => (
                                         <span key={i} className="star">
@@ -34,7 +37,7 @@ function FlowerType() {
                     );
                 })}
             </div>
-        </div>
+        </div >
     );
 
 }
