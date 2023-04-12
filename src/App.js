@@ -46,7 +46,7 @@ function App() {
 
       <BrowserRouter>
         <Wrapper className="hamburger-menu hdr_menu">
-          <label onClick={toggleMenu} for="menu_toggle" className="menu_btn">
+          <label onClick={toggleMenu} className="menu_btn">
             <span className={`menu_btn__inactive ${isOpen ? 'menu_btn__active' : ''}`}></span>
           </label>
 
