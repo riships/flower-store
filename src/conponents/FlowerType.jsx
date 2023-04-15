@@ -1,6 +1,7 @@
 import React from "react";
 import { useProductFlowers } from '../conponents/context/productcontext'
 import '../stylesheets/product.css';
+import { Link } from "react-router-dom";
 
 
 function FlowerType() {
@@ -11,12 +12,14 @@ function FlowerType() {
     }
     return (
         <div>
-            <h1>Flower Type</h1>
+            <h1 className="flwr-tp">Flower Type</h1>
             <div className="flowerTyp">
                 {flowerType.map((flower, index) => {
                     return (
                         <div key={index} className="product-card">
-                            <img src={flower.image} alt={flower.name} className="product-image" />
+                            <Link to={`/singleproduct/${flower.id}`}>
+                                <img src={flower.image} alt={flower.name} className="product-image" />
+                            </Link>
                             <div className="product-details">
                                 <div className="nm-and-prc">
                                     <h2 className="product-name">{flower.name}</h2>
