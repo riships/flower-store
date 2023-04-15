@@ -2,6 +2,7 @@ import React from "react";
 import { useProductFlowers } from '../conponents/context/productcontext'
 import '../stylesheets/product.css';
 import { Link } from "react-router-dom";
+import FormatPrice from "../Helper/FormatPrice";
 
 
 function FlowerType() {
@@ -23,7 +24,7 @@ function FlowerType() {
                             <div className="product-details">
                                 <div className="nm-and-prc">
                                     <h2 className="product-name">{flower.name}</h2>
-                                    <h2 className="product-price">{flower.price}</h2>
+                                    <h2 className="product-price"><FormatPrice price={flower.price} /></h2>
                                 </div>
 
                                 <p className="product-dis">{flower.description.slice(0, 100)}</p>

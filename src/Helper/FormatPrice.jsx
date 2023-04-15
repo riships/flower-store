@@ -1,5 +1,5 @@
 const FormatPrice = ({ price }) => {
-    return Intl.NumberFormat("en_IN", {
+    return Intl.NumberFormat("en-IN", {
         style: "currency",
         currency: "INR",
         minimumFractionDigits: 2,
