@@ -9,6 +9,8 @@ const intitalState = {
     isError: false,
     flowers: [],
     flowerType: [],
+    isSingleLoading: false,
+    singleflowers: {},
 }
 
 const AppProvider = ({ children }) => {
@@ -22,15 +24,27 @@ const AppProvider = ({ children }) => {
             dispatch({ type: "SET_API_DATA", payload: flowers });
         } catch (error) {
             dispatch({ type: "API_ERROR" });
+        }
+    };
+    // my single flower image
+    const getSingleFlower = async (url) => {
+        dispatch({ type: "SET_SINGLE_LOADING" });
+        try {
+            const res = await axios.get(url);
+            const singleflowers = await res.data;
+            dispatch({ type: "SET_SINGLE_FLOWER", payload: singleflowers });
+
+        } catch (error) {
+            dispatch({ type: "API_SINGLE_ERROR" });
 
         }
+    }
 
-    };
     useEffect(() => {
         getFlowers(API);
     }, []);
     return (
-        <AppContext.Provider value={{ ...state }}>
+        <AppContext.Provider value={{ ...state, getSingleFlower }}>
             {children}
         </AppContext.Provider>
     );

@@ -22,6 +22,24 @@ const FlowerReducers = (state, actions) => {
                 isLoading: false,
                 isError: true,
             };
+        case "SET_SINGLE_LOADING":
+            return {
+                ...state,
+                isSingleLoading: true,
+            };
+        case "SET_SINGLE_FLOWER":
+            return {
+                ...state,
+                isSingleLoading: false,
+                singleflowers: actions.payload,
+            };
+        case "API_SINGLE_ERROR":
+            return {
+                ...state,
+                isSingleLoading: false,
+                isError: true,
+            };
+
         default:
             return state;
 
