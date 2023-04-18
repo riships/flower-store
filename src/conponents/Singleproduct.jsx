@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useProductFlowers } from './context/productcontext';
+import FormatPrice from '../Helper/FormatPrice';
 const singleApi = "https://api.pujakaitem.com/api/products"
 
 function Singleproduct() {
@@ -19,7 +20,7 @@ function Singleproduct() {
                 <img src={image} alt={name} />
                 <h1>{name}</h1>
                 <p>{description}</p>
-                <p>Price: {price}</p>
+                <p>Price: <FormatPrice price={price} /></p>
                 <button>Add to Cart</button>
             </div>
         </>
