@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useProductFlowers } from './context/productcontext';
 import FormatPrice from '../Helper/FormatPrice';
-const singleApi = "https://api.pujakaitem.com/api/products"
+const singleApi = "http://localhost:3001/products"
 
 function Singleproduct() {
     const { getSingleFlower, singleflowers, isSingleLoading } = useProductFlowers();
