@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 import { BsFillCartFill } from 'react-icons/bs';
 import { useState } from 'react'
 import '../src/stylesheets/style.css';
-// import Singleproduct from "../src/conponents/Singleproduct";
+import Singleproduct from "../src/conponents/Singleproduct";
 import styled from 'styled-components';
 import Errorpage from "../src/conponents/Errorpage";
 import Cart from "../src/conponents/Cart";
@@ -68,7 +68,7 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/work' element={<Work />} />
-          {/* <Route path="/singleproduct/:id" element={<Singleproduct />} /> */}
+          <Route path="/singleproduct/:id" element={<Singleproduct />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<Errorpage />} />
         </Routes>
