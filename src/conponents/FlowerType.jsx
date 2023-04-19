@@ -7,7 +7,7 @@ import FormatPrice from "../Helper/FormatPrice";
 
 function FlowerType() {
     const { isLoading, flowerType } = useProductFlowers();
-    // console.log(flowerType);
+    console.log(flowerType);
     if (isLoading) {
         return <div>Loading...</div>;
     }
@@ -19,11 +19,11 @@ function FlowerType() {
                     return (
                         <div key={index} className="product-card">
                             <Link to={`/singleproduct/${flower.id}`}>
-                                <img src={flower.image} alt={flower.name} className="product-image" />
+                                <img src={flower.thumbnail} alt={flower.category} className="product-image" />
                             </Link>
                             <div className="product-details">
                                 <div className="nm-and-prc">
-                                    <h2 className="product-name">{flower.name}</h2>
+                                    <h2 className="product-name">{flower.brand}</h2>
                                     <h2 className="product-price"><FormatPrice price={flower.price} /></h2>
                                 </div>
 

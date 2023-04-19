@@ -8,6 +8,7 @@
       "discountPercentage": 12.96,
       "rating": 4.69,
       "stock": 94,
+      "featured": true,
       "brand": "Apple",
       "category": "smartphones",
       "thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
@@ -28,6 +29,7 @@
       "rating": 4.44,
       "stock": 34,
       "brand": "Apple",
+      "featured": true,
       "category": "smartphones",
       "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
       "images": [
@@ -45,6 +47,7 @@
       "discountPercentage": 15.46,
       "rating": 4.09,
       "stock": 36,
+      "featured": true,
       "brand": "Samsung",
       "category": "smartphones",
       "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
