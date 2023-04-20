@@ -564,7 +564,8 @@
       "scientific_name": "Anemone",
       "color": "White",
       "description": "A delicate flower with daisy-like blooms and a dark center.",
-      "image": "http://example.com/anemone.jpg",
+      "image": "https://t2.gstatic.com/licensed-image?q=tbn:ANd9GcS8aEWw_t_dwpdJg9omTnVOTRkEi6raoP45PtMdtHG3quvsnphGA78RjDwKorjFhyGrmKw4H0_GY-Ql6F8",
+      "featured": true,
       "features": [
         "Delicate",
         "Daisy-like blooms",
@@ -578,7 +579,8 @@
       "scientific_name": "Chrysanthemum",
       "color": "Yellow",
       "description": "A cheerful flower with daisy-like blooms that come in a variety of colors.",
-      "image": "http://example.com/chrysanthemum.jpg",
+      "image": "https://cdn.britannica.com/09/174809-050-CA9F8F8C/daisy-mums-ray-flowers-disk-centre.jpg",
+      "featured": true,
       "features": [
         "Cheerful",
         "Daisy-like blooms",
@@ -592,7 +594,8 @@
       "scientific_name": "Lamprocapnos spectabilis",
       "color": "Pink",
       "description": "A romantic flower with heart-shaped, pink blooms that hang from arching stems.",
-      "image": "http://example.com/bleeding-heart.jpg",
+      "image": "https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQ7uq8aO866dW87RLvndQQvKkn22uT7UxIojgp0Qq_YZVw-dSJ4mRjp_3gkeL7FqeV1ilqARMenjIEj0EY",
+      "featured": true,
       "features": [
         "Romantic",
         "Heart-shaped blooms",

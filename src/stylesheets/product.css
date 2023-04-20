@@ -14,11 +14,11 @@
     }
 
     .product-name {
-        font-size: 16px;
+        font-size: 12px;
     }
 
     .product-price {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .product-rating {
@@ -82,7 +82,8 @@
 }
 
 .product-name {
-    font-size: 16px;
+    font-size: 12px;
+    font-weight: 600;
     margin-bottom: 10px;
 }
 
@@ -92,7 +93,8 @@
 }
 
 .product-price {
-    font-size: 16px;
+    font-size: 12px;
+    font-weight: 600;
     margin-bottom: 10px;
 }
 

@@ -3,7 +3,8 @@ import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useProductFlowers } from './context/productcontext';
 import FormatPrice from '../Helper/FormatPrice';
-const singleApi = "https://localhost:3001/products"
+import PageNavigation from './PageNavigation';
+const singleApi = "http://localhost:3001/flowers"
 
 function Singleproduct() {
     const { getSingleFlower, singleflowers, isSingleLoading } = useProductFlowers();
@@ -16,6 +17,7 @@ function Singleproduct() {
 
     return (
         <>
+            <PageNavigation title={name} />
             <div className="product-page">
                 <img src={image} alt={name} />
                 <h1>{name}</h1>

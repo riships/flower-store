@@ -2,7 +2,7 @@ import React from "react";
 import { useProductFlowers } from '../conponents/context/productcontext'
 import '../stylesheets/product.css';
 import { Link } from "react-router-dom";
-import FormatPrice from "../Helper/FormatPrice";
+// import FormatPrice from "../Helper/FormatPrice";
 
 
 function FlowerType() {
@@ -19,12 +19,12 @@ function FlowerType() {
                     return (
                         <div key={index} className="product-card">
                             <Link to={`/singleproduct/${flower.id}`}>
-                                <img src={flower.thumbnail} alt={flower.category} className="product-image" />
+                                <img src={flower.image} alt={flower.category} className="product-image" />
                             </Link>
                             <div className="product-details">
                                 <div className="nm-and-prc">
-                                    <h2 className="product-name">{flower.brand}</h2>
-                                    <h2 className="product-price"><FormatPrice price={flower.price} /></h2>
+                                    <h2 className="product-name">{flower.name}</h2>
+                                    <h2 className="product-price">{flower.scientific_name}</h2>
                                 </div>
 
                                 <p className="product-dis">{flower.description.slice(0, 100)}</p>
