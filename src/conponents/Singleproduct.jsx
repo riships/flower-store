@@ -19,11 +19,16 @@ function Singleproduct() {
         <>
             <PageNavigation title={name} />
             <div className="product-page">
-                <img src={image} alt={name} />
-                <h1>{name}</h1>
-                <p>{description}</p>
-                <p>Price: <FormatPrice price={price} /></p>
-                <button>Add to Cart</button>
+                <div className="product-image">
+                    <img src={image} alt={name} />
+                </div>
+                <div className="product-details">
+                    <h1>{name}</h1>
+                    {/* <p className="product-price">${price.toFixed(2)}</p> */}
+                    {/* <p className="product-rating">{rating} stars ({reviews} reviews)</p> */}
+                    <p className="product-description">{description}</p>
+                    <button className="add-to-cart">Add to Cart</button>
+                </div>
             </div>
         </>
     )
