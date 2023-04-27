@@ -11,6 +11,7 @@ import Singleproduct from "../src/conponents/Singleproduct";
 import styled from 'styled-components';
 import Errorpage from "../src/conponents/Errorpage";
 import Cart from "../src/conponents/Cart";
+// import ApiData from "./conponents/ApiData";
 
 const Wrapper = styled.header`
     height:70px;
@@ -39,7 +40,10 @@ function App() {
       text: "Work",
       link: "/work"
     }
-
+    // {
+    //   text: "Apidata",
+    //   link: "/apidata"
+    // }
   ];
   return (
     <>
@@ -70,6 +74,8 @@ function App() {
           <Route path='/work' element={<Work />} />
           <Route path="/singleproduct/:id" element={<Singleproduct />} />
           <Route path="/cart" element={<Cart />} />
+          {/* <Route path="/apidata" element={<ApiData />} /> */}
+
           <Route path="*" element={<Errorpage />} />
         </Routes>
       </BrowserRouter >
