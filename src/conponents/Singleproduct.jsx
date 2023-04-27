@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import { useProductFlowers } from './context/productcontext';
 import FormatPrice from '../Helper/FormatPrice';
 import PageNavigation from './PageNavigation';
-const singleApi = "http://localhost:3001/flowers"
+const singleApi = "http://localhost:5000/flowers"
 
 function Singleproduct() {
     const { getSingleFlower, singleflowers, isSingleLoading } = useProductFlowers();
