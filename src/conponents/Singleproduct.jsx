@@ -21,7 +21,7 @@ function Singleproduct() {
             <PageNavigation title={name} />
             <div className="product-page">
                 <div className="product-image">
-                    <img src={image} alt={name} />
+                    <img src={image} alt={name} className='singPage-thumbNail' />
                 </div>
                 <div className="product-details">
                     <h1>{name}</h1>
