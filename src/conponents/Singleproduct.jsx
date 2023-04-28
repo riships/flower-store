@@ -2,9 +2,8 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useProductFlowers } from './context/productcontext';
-// import FormatPrice from '../Helper/FormatPrice';
+import '../stylesheets/singleProduct.css';
 import PageNavigation from './PageNavigation';
-import Breadcrumb from 'react-bootstrap/Breadcrumb';
 const singleApi = "https://flower-data.onrender.com/flowers"
 
 function Singleproduct() {
@@ -21,7 +20,7 @@ function Singleproduct() {
             <PageNavigation title={name} />
             <div className="product-page">
                 <div className="product-image">
-                    <img src={image} alt={name} className='singPage-thumbNail' />
+                    <img src={image} alt={name} className='singlPage-thumbNail' />
                 </div>
                 <div className="product-details">
                     <h1>{name}</h1>
