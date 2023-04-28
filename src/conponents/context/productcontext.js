@@ -3,7 +3,7 @@ import axios from "axios";
 import reducer from "../reducers/flowerReducers"
 
 const AppContext = createContext();
-const API = "http://localhost:5000/flowers";
+const API = "https://flower-data.onrender.com/flowers";
 const intitalState = {
     isLoading: false,
     isError: false,
