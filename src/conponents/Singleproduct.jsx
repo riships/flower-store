@@ -7,13 +7,20 @@ import PageNavigation from './PageNavigation';
 const singleApi = "https://flower-data.onrender.com/flowers"
 
 function Singleproduct() {
-    const { getSingleFlower, singleflowers, isSingleLoading } = useProductFlowers();
+    const { getSingleFlower, singleflowers, isSingleLoading, singleError } = useProductFlowers();
 
     const { id } = useParams();
     const { company, name, price, description, category, stock, stars, reviews, image } = singleflowers;
     useEffect(() => {
         getSingleFlower(`${singleApi}/${id}`);
-    });
+    }, []);
+    if (isSingleLoading) {
+        return <div>Loading...</div>; // show a loading spinner if data is still loading
+    }
+
+    if (singleError) {
+        return <div>Error: {singleError}</div>; // show an error message if there's an error fetching data
+    }
 
     return (
         <>

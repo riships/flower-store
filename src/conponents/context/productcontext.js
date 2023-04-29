@@ -7,6 +7,7 @@ const API = "https://flower-data.onrender.com/flowers";
 const intitalState = {
     isLoading: false,
     isError: false,
+    isSingleError: false,
     flowers: [],
     flowerType: [],
     isSingleLoading: false,
