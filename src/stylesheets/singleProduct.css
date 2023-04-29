@@ -1,86 +1,73 @@
-.single-product-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 20px auto;
-    max-width: 1200px;
+gb .card {
+    border: none
 }
 
-.single-product-image-container {
-    flex: 1;
-    margin-right: 20px;
+.product {
+    background-color: #eee
 }
 
-.single-product-image {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-width: 500px;
+.brand {
+    font-size: 13px
 }
 
-.single-product-details-container {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
+.act-price {
+    color: red;
+    font-weight: 700
 }
 
-.single-product-name {
-    font-size: 24px;
-    margin: 0 0 10px 0;
+.dis-price {
+    text-decoration: line-through
 }
 
-.single-product-rating-container {
-    display: flex;
-    align-items: center;
-    margin: 0 0 10px 0;
+.about {
+    font-size: 14px
 }
 
-.single-product-reviews {
-    font-size: 16px;
-    margin-left: 5px;
+.color {
+    margin-bottom: 10px
 }
 
-.single-product-description {
-    font-size: 16px;
-    margin: 10px 0;
+label.radio {
+    cursor: pointer
 }
 
-.single-product-price {
-    font-size: 24px;
-    margin: 10px 0;
+label.radio input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    pointer-events: none
 }
 
-.single-product-options {
-    margin: 10px 0;
-    width: 50%;
+label.radio span {
+    padding: 2px 9px;
+    border: 2px solid #ff0000;
+    display: inline-block;
+    color: #ff0000;
+    border-radius: 3px;
+    text-transform: uppercase
 }
 
-.single-product-option {
-    display: flex;
-    align-items: center;
-    margin: 5px 0;
+label.radio input:checked+span {
+    border-color: #ff0000;
+    background-color: #ff0000;
+    color: #fff
 }
 
-.single-product-option-name {
-    font-weight: bold;
-    width: 30%;
+.btn-danger {
+    background-color: #ff0000 !important;
+    border-color: #ff0000 !important
 }
 
-.single-product-option-value {
-    width: 70%;
+.btn-danger:hover {
+    background-color: #da0606 !important;
+    border-color: #da0606 !important
 }
 
-.single-product-add-to-cart {
-    background-color: #ff9800;
-    border: none;
-    color: white;
-    font-size: 16px;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-top: auto;
-    align-self: flex-start;
+.btn-danger:focus {
+    box-shadow: none
 }
 
-.single-product-add-to-cart:hover {
-    background-color: #ffa726;
+.cart i {
+    margin-right: 10px
 }

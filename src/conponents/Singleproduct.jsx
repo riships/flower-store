@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useProductFlowers } from './context/productcontext';
 import '../stylesheets/singleProduct.css';
 import PageNavigation from './PageNavigation';
-// import StarRating from './StarRating';
+import { FaLongArrowAltLeft } from 'react-icons/fa';
 const singleApi = "https://flower-data.onrender.com/flowers"
 
 function Singleproduct() {
@@ -25,29 +25,51 @@ function Singleproduct() {
     return (
         <>
             <PageNavigation title={name} />
-            <div className="single-product-container">
-                <div className="single-product-image-container">
-                    <img src={image} alt={name} className="single-product-image" />
-                </div>
-                <div className="single-product-details-container">
-                    <h1 className="single-product-name">{name}</h1>
-                    {/* <div className="single-product-rating-container">
-                        <StarRating rating={stars} />
-                        <span className="single-product-reviews">{reviews} reviews</span>
-                    </div> */}
-                    <p className="single-product-description">{description}</p>
-                    {/* <p className="single-product-price">${price.toFixed(2)}</p> */}
-                    {features && (
-                        <div className="single-product-options">
-                            {Object.keys(features).map((optionKey) => (
-                                <div key={optionKey} className="single-product-option">
-                                    <span className="single-product-option-name">{optionKey}: </span>
-                                    <span className="single-product-option-value">{features[optionKey]}</span>
+            <div className="container mt-5 mb-5">
+                <div className="row d-flex justify-content-center">
+                    <div className="col-md-10">
+                        <div className="card">
+                            <div className="row">
+                                <div className="col-md-6">
+                                    <div className="images p-3">
+                                        <div className="text-center p-4">
+                                            <img id="main-image" src={image} width="250" /> </div>
+                                        <div className="thumbnail text-center">
+
+                                        </div>
+                                    </div>
                                 </div>
-                            ))}
+                                <div className="col-md-6">
+                                    <div className="product p-4">
+                                        <div className="d-flex justify-content-between align-items-center">
+                                            <div className="d-flex align-items-center">
+                                                <FaLongArrowAltLeft />
+                                                <span className="ml-1">Back</span>
+                                            </div>
+                                            <i className="fa fa-shopping-cart text-muted"></i>
+                                        </div>
+                                        <div className="mt-4 mb-3"> <span className="text-uppercase text-muted brand">Flower</span>
+                                            <h5 className="text-uppercase">{name}</h5>
+                                            <div className="price d-flex flex-row align-items-center">
+                                                <span className="act-price">{price}</span>
+                                                <div className="ml-2">
+                                                    <small className="dis-price">{price}</small>
+                                                    <span>{price}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p className="about">{description}</p>
+
+                                        <div className="cart mt-4 align-items-center">
+                                            <button className="btn btn-danger text-uppercase mr-2 px-4">Add to cart</button>
+                                            <i className="fa fa-heart text-muted"></i>
+                                            <i className="fa fa-share-alt text-muted"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    )}
-                    <button className="single-product-add-to-cart">Add to Cart</button>
+                    </div>
                 </div>
             </div>
         </>
