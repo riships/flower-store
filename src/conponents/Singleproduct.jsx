@@ -4,6 +4,10 @@ import { useProductFlowers } from './context/productcontext';
 import '../stylesheets/singleProduct.css';
 import PageNavigation from './PageNavigation';
 import { FaLongArrowAltLeft } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { BsFillCartFill } from 'react-icons/bs';
+
+
 const singleApi = "https://flower-data.onrender.com/flowers"
 
 function Singleproduct() {
@@ -41,13 +45,15 @@ function Singleproduct() {
                                 </div>
                                 <div className="col-md-6">
                                     <div className="product p-4">
-                                        <div className="d-flex justify-content-between align-items-center">
+                                        {/* <div className="d-flex justify-content-between align-items-center">
                                             <div className="d-flex align-items-center">
                                                 <FaLongArrowAltLeft />
                                                 <span className="ml-1">Back</span>
                                             </div>
-                                            <i className="fa fa-shopping-cart text-muted"></i>
-                                        </div>
+                                            <Link to="/cart"><BsFillCartFill className="cart-trolley" />
+                                                <span className="cart-total--item">10</span>
+                                            </Link>
+                                        </div> */}
                                         <div className="mt-4 mb-3"> <span className="text-uppercase text-muted brand">Flower</span>
                                             <h5 className="text-uppercase">{name}</h5>
                                             <div className="price d-flex flex-row align-items-center">
