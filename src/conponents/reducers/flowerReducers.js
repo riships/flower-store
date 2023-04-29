@@ -41,9 +41,9 @@ const FlowerReducers = (state, actions) => {
             };
 
         default:
-            return state;
+            throw new Error(`Invalid action type: ${actions.type}`);
 
-    };
+    }
 }
 
 export default FlowerReducers;

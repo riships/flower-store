@@ -212,6 +212,7 @@
     }
 
     .cart-total--item {
+        text-align: center;
         width: 1.5rem;
         height: 1.5rem;
         position: absolute;
@@ -252,6 +253,7 @@
     }
 
     .cart-total--item {
+        text-align: center;
         width: 1.5rem;
         height: 1.5rem;
         position: absolute;
@@ -292,6 +294,7 @@
     }
 
     .cart-total--item {
+        text-align: center;
         width: 1.5rem;
         height: 1.5rem;
         position: absolute;
@@ -335,6 +338,7 @@
         border-radius: 50%;
         display: grid;
         align-items: center;
+        text-align: center;
         top: -20%;
         left: 60%;
 
