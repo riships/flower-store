@@ -3,7 +3,7 @@ import { useProductFlowers } from '../conponents/context/productcontext'
 import '../stylesheets/product.css';
 import { Link } from "react-router-dom";
 // import FormatPrice from "../Helper/FormatPrice";
-import Rating from 'react-rating';
+// import Rating from 'react-rating';
 
 
 function FlowerType() {
@@ -33,13 +33,13 @@ function FlowerType() {
                                 </div>
 
                                 <p className="product-dis">{flower.description}</p>
-                                <div className="product-rating">
+                                {/* <div className="product-rating">
                                     {Array.from(Array(flower.ratings)).map((_, i) => (
                                         <span key={i} className="star">
                                             ★
                                         </span>
                                     ))}
-                                </div>
+                                </div> */}
                                 <button className="product-button">Add to Cart</button>
                             </div>
                         </div>
