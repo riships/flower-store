@@ -1,14 +1,12 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
-import React from 'react';
 import axios from "axios";
 import reducer from "../reducers/flowerReducers"
 
 const AppContext = createContext();
-const API = "https://flower-data.onrender.com/flowers";
+const API = "http://localhost:3001/flowers";
 const intitalState = {
     isLoading: false,
     isError: false,
-    isSingleError: false,
     flowers: [],
     flowerType: [],
     isSingleLoading: false,
