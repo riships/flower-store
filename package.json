@@ -46,5 +46,17 @@
   },
   "devDependencies": {
     "concurrently": "^8.0.1"
-  }
+  },
+  "description": "Welcome to your shiny new Codespace running React! We've got everything fired up and running for you to explore React.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riships/gym_web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/riships/gym_web/issues"
+  },
+  "homepage": "https://github.com/riships/gym_web#readme"
 }
