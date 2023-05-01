@@ -3,9 +3,9 @@ import { useParams } from 'react-router-dom'
 import { useProductFlowers } from './context/productcontext';
 import '../stylesheets/singleProduct.css';
 import PageNavigation from './PageNavigation';
-import { FaLongArrowAltLeft } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import { BsFillCartFill } from 'react-icons/bs';
+// import { FaLongArrowAltLeft } from 'react-icons/fa';
+// import { Link } from 'react-router-dom';
+// import { BsFillCartFill } from 'react-icons/bs';
 
 
 const singleApi = "https://flower-data.onrender.com/flowers"
