@@ -1,0 +1,28 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.multple-imgs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.multple-imgs img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 10px;
+}

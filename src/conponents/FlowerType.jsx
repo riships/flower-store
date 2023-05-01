@@ -24,7 +24,7 @@ function FlowerType() {
                     return (
                         <div key={index} className="product-card">
                             <Link to={`/singleproduct/${flower.id}`}>
-                                <img src={flower.images} alt={flower.category} className="product-image" />
+                                <img src={flower.images[0].url} alt={flower.category} className="product-image" />
                             </Link>
                             <div className="product-details">
                                 <div className="nm-and-prc">
