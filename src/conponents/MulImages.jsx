@@ -8,7 +8,7 @@ function MulImages({ imags = [{ "url": '' }] }) {
         <div className="multple-imgs">
             <img src={mainImge.url} alt="product-img" />
         </div>
-        <div className="grid grid-four-column">
+        <div className="grid2 grid-four-column">
             {
                 imags.map((curElm, index) => {
                     return (

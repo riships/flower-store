@@ -75,7 +75,6 @@ function App() {
           <Route path="/singleproduct/:id" element={<Singleproduct />} />
           <Route path="/cart" element={<Cart />} />
           {/* <Route path="/apidata" element={<ApiData />} /> */}
-
           <Route path="*" element={<Errorpage />} />
         </Routes>
       </BrowserRouter >

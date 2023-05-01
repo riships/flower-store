@@ -1,27 +1,32 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { FaStar, FaRegStar } from 'react-icons/fa';
+// import PropTypes from 'prop-types';
+import { FaStar } from 'react-icons/fa';
+import { BsStarHalf } from 'react-icons/bs';
+import { AiOutlineStar } from 'react-icons/ai';
 
-const StarRating = ({ rating }) => {
-    const totalStars = 5;
-    const fullStars = Math.floor(rating);
-    const hasHalfStar = rating - fullStars >= 0.5;
+const StarRating = ({ star }) => {
+    console.log(star);
+    const ratingStars = Array.from({ length: 5 }, (elem, index) => {
+        let number = index + 0.5;
+        return (
+            <span key={index}>
+                {star > index + 1 ? (
+                    <FaStar />
+                ) : star > number ? (
+                    <BsStarHalf />
+
+                ) : (
+                    <AiOutlineStar />
+                )}
+            </span>
+        )
+    });
 
     return (
         <div className="star-rating">
-            {[...Array(fullStars)].map((_, i) => (
-                <FaStar key={i} />
-            ))}
-            {hasHalfStar && <FaStar half key={fullStars} />}
-            {[...Array(totalStars - fullStars - (hasHalfStar ? 1 : 0))].map((_, i) => (
-                <FaRegStar key={fullStars + (hasHalfStar ? 1 : 0) + i} />
-            ))}
+            {ratingStars}
         </div>
     );
-};
-
-StarRating.propTypes = {
-    rating: PropTypes.number.isRequired,
 };
 
 export default StarRating;
