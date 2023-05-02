@@ -6,9 +6,8 @@ import PageNavigation from './PageNavigation';
 import MulImages from './MulImages';
 import FormatPrice from '../Helper/FormatPrice'
 import StarRating from "./StarRating"
-// import { FaLongArrowAltLeft } from 'react-icons/fa';
-// import { Link } from 'react-router-dom';
-// import { BsFillCartFill } from 'react-icons/bs';
+import styled from "styled-components";
+import { TbTruckDelivery, TbReplace, MdLocationPin, BiShieldQuarter } from 'react-icons/all';
 
 
 const singleApi = "https://flower-data.onrender.com/flowers"
@@ -52,11 +51,17 @@ function Singleproduct() {
                                         <div className="mt-4 mb-3"> <span className="text-uppercase text-muted brand">Flower</span>
                                             <h5 className="text-uppercase">{name}</h5>
                                             <div className="price d-flex flex-row align-items-center">
-                                                <FormatPrice price={price} />
+                                                <FormatPrice price={price * 200} />
                                                 <StarRating className="str-color" star={ratings} />
                                             </div>
                                         </div>
                                         <p className="about">{description}</p>
+                                        <AllBtnIcons>
+                                            <BtnGroup><TbTruckDelivery /></BtnGroup>
+                                            <BtnGroup><TbReplace /></BtnGroup>
+                                            <BtnGroup><MdLocationPin /></BtnGroup>
+                                            <BtnGroup><BiShieldQuarter /></BtnGroup>
+                                        </AllBtnIcons>
                                     </div>
                                 </div>
                             </div>
@@ -67,5 +72,19 @@ function Singleproduct() {
         </>
     )
 }
+const AllBtnIcons = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+`;
+
+const BtnGroup = styled.div`
+  margin: 0 10px;
+  font-size:20px;
+  background:white;
+  padding:5px 10px;
+  border-radius:50px;
+`;
 
 export default Singleproduct
