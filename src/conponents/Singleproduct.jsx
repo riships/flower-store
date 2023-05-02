@@ -49,24 +49,14 @@ function Singleproduct() {
                                 </div>
                                 <div className="col-md-6">
                                     <div className="product p-4">
-                                        <StarRating star={ratings} />
                                         <div className="mt-4 mb-3"> <span className="text-uppercase text-muted brand">Flower</span>
                                             <h5 className="text-uppercase">{name}</h5>
                                             <div className="price d-flex flex-row align-items-center">
                                                 <FormatPrice price={price} />
-                                                {/* <div className="ml-2">
-                                                    <small className="dis-price"><FormatPrice price={price} /></small>
-                                                    <span><FormatPrice price={price} /></span>
-                                                </div> */}
+                                                <StarRating className="str-color" star={ratings} />
                                             </div>
                                         </div>
                                         <p className="about">{description}</p>
-
-                                        <div className="cart mt-4 align-items-center">
-                                            <button className="btn btn-danger text-uppercase mr-2 px-4">Add to cart</button>
-                                            <i className="fa fa-heart text-muted"></i>
-                                            <i className="fa fa-share-alt text-muted"></i>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

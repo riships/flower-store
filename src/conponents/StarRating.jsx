@@ -3,6 +3,7 @@ import React from 'react';
 import { FaStar } from 'react-icons/fa';
 import { BsStarHalf } from 'react-icons/bs';
 import { AiOutlineStar } from 'react-icons/ai';
+import styled from "styled-components";
 
 const StarRating = ({ star }) => {
     console.log(star);
@@ -23,10 +24,11 @@ const StarRating = ({ star }) => {
     });
 
     return (
-        <div className="star-rating">
-            {ratingStars}
-        </div>
+        <StrRating>{ratingStars}</StrRating>
     );
 };
+const StrRating = styled.div`
+  color: #FFD700;
+`;
 
 export default StarRating;
