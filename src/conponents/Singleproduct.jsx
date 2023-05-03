@@ -33,13 +33,13 @@ function Singleproduct() {
             <PageNavigation title={name} />
             <div className="container mt-5 mb-5">
                 <div className="row d-flex justify-content-center">
-                    <div className="col-md-10">
+                    <div className="col-md-12">
                         <div className="card">
                             <div className="row">
                                 <div className="col-md-6">
                                     <div className="images p-3">
                                         <div className="text-center p-4">
-                                            <MulImages imags={images} />
+                                            <MulImages imags={images} rounded />
                                         </div>
                                     </div>
                                 </div>
@@ -54,10 +54,22 @@ function Singleproduct() {
                                         </div>
                                         <p className="about">{description}</p>
                                         <AllBtnIcons>
-                                            <BtnGroup><TbTruckDelivery /></BtnGroup>
-                                            <BtnGroup><TbReplace /></BtnGroup>
-                                            <BtnGroup><MdLocationPin /></BtnGroup>
-                                            <BtnGroup><BiShieldQuarter /></BtnGroup>
+                                            <BtnGroup>
+                                                <TbTruckDelivery className='Btn--Group' />
+                                                <IconText>Fast and Secure Delivery</IconText>
+                                            </BtnGroup>
+                                            <BtnGroup>
+                                                <TbReplace className='Btn--Group' />
+                                                <IconText>15 Days Replacement</IconText>
+                                            </BtnGroup>
+                                            <BtnGroup>
+                                                <MdLocationPin className='Btn--Group' />
+                                                <IconText>All India Delivery</IconText>
+                                            </BtnGroup>
+                                            <BtnGroup>
+                                                <BiShieldQuarter className='Btn--Group' />
+                                                <IconText>30 Days Warranty</IconText>
+                                            </BtnGroup>
                                         </AllBtnIcons>
                                     </div>
                                 </div>
@@ -75,13 +87,26 @@ const AllBtnIcons = styled.div`
   align-items: center;
   width: 100%;
 `;
+const IconText = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size:12px;
+`;
 
 const BtnGroup = styled.div`
+  display: flex;
+  flex-direction:column;
   margin: 0 10px;
-  font-size:20px;
-  background:white;
-  padding:5px 10px;
-  border-radius:50px;
+  font-size:40px;
+  text-align:center;
+  .Btn--Group{
+    padding:10px;
+    background:white;
+    border-radius:25px;
+    }
+  }
 `;
 
 export default Singleproduct

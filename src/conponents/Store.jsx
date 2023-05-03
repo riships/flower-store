@@ -2,6 +2,7 @@ import React from 'react'
 import '../stylesheets/common.css'
 import '../stylesheets/style.css'
 import myImage from '../stylesheets/img/flower.png'
+import styled from 'styled-components'
 
 
 function Store() {
@@ -18,7 +19,7 @@ function Store() {
                         </div>
                         <div className='hero-section-img'>
                             <figure>
-                                <img src={myImage} alt='flowers' className='hero-section-img' />
+                                <HeroImg src={myImage} alt='flowers' />
                             </figure>
                         </div>
                     </div>
@@ -28,5 +29,10 @@ function Store() {
 
     )
 }
+const HeroImg = styled.img`
+width: 100%;
+height: 100%;
+box-shadow: 25px 25px 0px 5px rgba(255, 230, 231,1);
+`
 
 export default Store
