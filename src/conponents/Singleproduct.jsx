@@ -20,9 +20,6 @@ function Singleproduct() {
     useEffect(() => {
         getSingleFlower(`${singleApi}/${id}`);
     }, []);
-
-    // const imgs = [images];
-    // console.log(imgs + " - image");
     if (isSingleLoading) {
         return <div>Loading...</div>; // show a loading spinner if data is still loading
     }
