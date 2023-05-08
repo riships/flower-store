@@ -6,8 +6,7 @@ import PageNavigation from './PageNavigation';
 import MulImages from './MulImages';
 import FormatPrice from '../Helper/FormatPrice'
 import StarRating from "./StarRating"
-import styled from "styled-components";
-import { TbTruckDelivery, TbReplace, MdLocationPin, BiShieldQuarter } from 'react-icons/all';
+import Icons from './Icons';
 
 
 const singleApi = "https://flower-data.onrender.com/flowers"
@@ -53,24 +52,7 @@ function Singleproduct() {
                                             </div>
                                         </div>
                                         <p className="about">{description}</p>
-                                        <AllBtnIcons>
-                                            <BtnGroup>
-                                                <TbTruckDelivery className='Btn--Group' />
-                                                <IconText>Fast and Secure Delivery</IconText>
-                                            </BtnGroup>
-                                            <BtnGroup>
-                                                <TbReplace className='Btn--Group' />
-                                                <IconText>15 Days Replacement</IconText>
-                                            </BtnGroup>
-                                            <BtnGroup>
-                                                <MdLocationPin className='Btn--Group' />
-                                                <IconText>All India Delivery</IconText>
-                                            </BtnGroup>
-                                            <BtnGroup>
-                                                <BiShieldQuarter className='Btn--Group' />
-                                                <IconText>30 Days Warranty</IconText>
-                                            </BtnGroup>
-                                        </AllBtnIcons>
+                                        <Icons />
                                     </div>
                                 </div>
                             </div>
@@ -81,32 +63,5 @@ function Singleproduct() {
         </>
     )
 }
-const AllBtnIcons = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-`;
-const IconText = styled.p`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  font-size:12px;
-`;
-
-const BtnGroup = styled.div`
-  display: flex;
-  flex-direction:column;
-  margin: 0 10px;
-  font-size:40px;
-  text-align:center;
-  .Btn--Group{
-    padding:10px;
-    background:white;
-    border-radius:25px;
-    }
-  }
-`;
 
 export default Singleproduct
