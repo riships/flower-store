@@ -10,57 +10,51 @@ function Icons() {
     const [showPopup4, setShowPopup4] = useState(false);
 
 
-    const handleMouseEnter1 = () => {
-        setShowPopup1(true);
+    const boxShow1 = () => {
+        setShowPopup1(!showPopup1);
     };
-    const handleMouseLeave1 = () => {
-        setShowPopup1(false);
+    const boxShow2 = () => {
+        setShowPopup2(!showPopup2);
     };
-
-    const handleMouseEnter2 = () => {
-        setShowPopup2(true);
+    const boxShow3 = () => {
+        setShowPopup3(!showPopup3);
     };
-    const handleMouseLeave2 = () => {
-        setShowPopup2(false);
-    };
-
-    const handleMouseEnter3 = () => {
-        setShowPopup3(true);
-    };
-    const handleMouseLeave3 = () => {
-        setShowPopup3(false);
+    const boxShow4 = () => {
+        setShowPopup4(!showPopup4);
     };
 
-    const handleMouseEnter4 = () => {
-        setShowPopup4(true);
-    };
-    const handleMouseLeave4 = () => {
-        setShowPopup4(false);
-    };
     return (
         <>
             <AllBtnIcons>
                 <BtnGroup>
-                    <TbTruckDelivery className='Btn--Group' onMouseEnter={handleMouseEnter1} onMouseLeave={handleMouseLeave1} />
-                    {showPopup1 && <p className='hovr--size'>Fast and Secure Delivery</p>}
+                    <TbTruckDelivery className='Btn--Group' onClick={boxShow1} />
+                    {showPopup1 && <PointsBox>
+                        <p className='hovr--size'>Fast and Secure Delivery</p>
+                    </PointsBox>}
                     <IconText>Fast and Secure Delivery</IconText>
                 </BtnGroup>
-                <BtnGroup onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseLeave2}>
+                <BtnGroup onClick={boxShow2} >
                     <TbReplace className='Btn--Group' />
-                    {showPopup2 && <p className='hovr--size'>15 Days Replacement</p>}
+                    {showPopup2 && <PointsBox>
+                        <p className='hovr--size'>15 Days Replacement</p>
+                    </PointsBox>}
                     <IconText>15 Days Replacement</IconText>
                 </BtnGroup>
                 <BtnGroup>
-                    <MdLocationPin className='Btn--Group' onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseLeave3} />
-                    {showPopup3 && <p className='hovr--size'>All India Delivery</p>}
+                    <MdLocationPin className='Btn--Group' onClick={boxShow3} />
+                    {showPopup3 && <PointsBox>
+                        <p className='hovr--size'>All India Delivery</p>
+                    </PointsBox>}
                     <IconText>All India Delivery</IconText>
                 </BtnGroup>
                 <BtnGroup>
-                    <BiShieldQuarter className='Btn--Group' onMouseEnter={handleMouseEnter4} onMouseLeave={handleMouseLeave4} />
-                    {showPopup4 && <p className='hovr--size'>30 Days Warranty</p>}
+                    <BiShieldQuarter className='Btn--Group' onClick={boxShow4} />
+                    {showPopup4 && <PointsBox>
+                        <p className='hovr--size'>30 Days Warranty</p>
+                    </PointsBox>}
                     <IconText>30 Days Warranty</IconText>
                 </BtnGroup>
-            </AllBtnIcons>
+            </AllBtnIcons >
         </>
     )
 }
@@ -84,14 +78,29 @@ const BtnGroup = styled.div`
   margin: 0 10px;
   font-size:40px;
   text-align:center;
+  cursor:pointer;
+  position:relative;
   .Btn--Group{
     padding:10px;
     background:white;
     border-radius:25px;
     }
+`;
+const PointsBox = styled.div`
+    display:flex;
+    position:absolute;
+    align-item:center;
+    top:60px; 
+    left:0;
+    right:0;
+    height:100px;
+    width:100px;
+    background:#DDDDDD;
+    justify-content:center;
+    text-align:center;
     .hovr--size{
         font-size:15px;
     }
-`;
+`
 
 export default Icons
