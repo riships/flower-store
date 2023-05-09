@@ -1,7 +1,7 @@
 import React from 'react'
 import '../stylesheets/common.css'
 import '../stylesheets/style.css'
-import myImage from '../stylesheets/img/flower.png'
+import myImage from '../stylesheets/img/flower2.png'
 import styled from 'styled-components'
 
 

@@ -59,6 +59,14 @@
         padding: 0 3.2rem;
     }
 
+    .single--pro-pad {
+        padding: 1.5rem;
+    }
+
+    .single--pro-pad2 {
+        padding: 1rem;
+    }
+
     .hero-section-data {
         margin-top: 50px;
     }
@@ -180,7 +188,7 @@
         box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
         transition: 0.1s;
         /* visibility: hidden; */
-        z-index: 999;
+        z-index: 998;
     }
 
     .hdr_menu a {
@@ -229,7 +237,15 @@
 
     .containr {
         max-width: 30rem;
-        padding: 0 3.2rem;
+        padding: 0 1.2rem;
+    }
+
+    .single--pro-pad {
+        padding: 0.2rem;
+    }
+
+    .single--pro-pad2 {
+        padding: 0.2rem;
     }
 
     .grid-2-col {
@@ -245,6 +261,11 @@
 }
 
 @media (min-width:768px) and (max-width:991px) {
+    .containr {
+        max-width: 40rem;
+        padding: 0 3.2rem;
+    }
+
     .cart-trolley--link {
         position: relative;
     }
@@ -274,6 +295,14 @@
         padding: 0 3.2rem;
     }
 
+    .single--pro-pad {
+        padding: 0.2rem;
+    }
+
+    .single--pro-pad2 {
+        padding: 0.2rem;
+    }
+
     .grid-2-col {
         grid-template-columns: repeat(2, 2fr);
         padding: 10px;
@@ -287,6 +316,11 @@
 }
 
 @media (min-width:992px) and (max-width:1199px) {
+    .containr {
+        max-width: 100rem;
+        padding: 0 3.2rem;
+    }
+
     .cart-trolley--link {
         position: relative;
     }
@@ -294,6 +328,14 @@
     .cart-trolley {
         position: relative;
         font-size: 1.7rem;
+    }
+
+    .single--pro-pad {
+        padding: 1.5rem;
+    }
+
+    .single--pro-pad2 {
+        padding: 1rem;
     }
 
     .cart-total--item {
@@ -326,6 +368,14 @@
 @media (min-width:1200px) {
     .cart-trolley--link {
         position: relative;
+    }
+
+    .single--pro-pad {
+        padding: 1.5rem;
+    }
+
+    .single--pro-pad2 {
+        padding: 1rem;
     }
 
     .cart-trolley {

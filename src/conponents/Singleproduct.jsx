@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useProductFlowers } from './context/productcontext';
 import '../stylesheets/singleProduct.css';
+import '../stylesheets/common.css';
 import PageNavigation from './PageNavigation';
 import MulImages from './MulImages';
 import FormatPrice from '../Helper/FormatPrice'
@@ -30,20 +31,20 @@ function Singleproduct() {
     return (
         <>
             <PageNavigation title={name} />
-            <div className="container mt-5 mb-5">
+            <div className="containr mt-5 mb-5">
                 <div className="row d-flex justify-content-center">
                     <div className="col-md-12">
                         <div className="card">
                             <div className="row">
                                 <div className="col-md-6">
-                                    <div className="images p-3">
-                                        <div className="text-center p-4">
+                                    <div className="images single--pro-pad2">
+                                        <div className="text-center single--pro-pad">
                                             <MulImages imags={images} rounded />
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-md-6">
-                                    <div className="product p-4">
+                                    <div className="product single--pro-pad">
                                         <div className="mt-4 mb-3"> <span className="text-uppercase text-muted brand">Flower</span>
                                             <h5 className="text-uppercase">{name}</h5>
                                             <div className="price d-flex flex-row align-items-center">
