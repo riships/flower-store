@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useProductFlowers } from './context/productcontext';
 import '../stylesheets/singleProduct.css';
@@ -8,15 +8,16 @@ import MulImages from './MulImages';
 import FormatPrice from '../Helper/FormatPrice'
 import StarRating from "./StarRating"
 import Icons from './Icons';
+import ProductAvailability from './ProductAvailability';
 
 
 const singleApi = "https://flower-data.onrender.com/flowers"
 
 function Singleproduct() {
+    const [quantity, setQuantity] = useState(1);
     const { getSingleFlower, singleflowers, isSingleLoading, singleError } = useProductFlowers();
-
     const { id } = useParams();
-    const { company, name, price, description, features, category, stock, ratings, reviews, images } = singleflowers;
+    const { name, price, description, availability, ratings, images } = singleflowers;
     useEffect(() => {
         getSingleFlower(`${singleApi}/${id}`);
     }, []);
@@ -50,6 +51,15 @@ function Singleproduct() {
                                             <div className="price d-flex flex-row align-items-center">
                                                 <FormatPrice price={price * 200} />
                                                 <StarRating className="str-color" star={ratings} />
+                                            </div>
+                                            <div className="price d-flex flex-row align-items-center">
+                                                <ProductAvailability
+                                                    inStock={availability}
+                                                    price={price}
+                                                    quantity={quantity}
+                                                    setQuantity={setQuantity}
+
+                                                />
                                             </div>
                                         </div>
                                         <p className="about">{description}</p>
