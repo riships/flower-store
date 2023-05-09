@@ -1,6 +1,5 @@
 import React from "react";
-// import FormatPrice from '../Helper/FormatPrice'
-
+import styled from "styled-components";
 function ProductAvailability({ inStock, setQuantity, quantity }) {
     const handleQuantityChange = (event) => {
         const newQuantity = event.target.value;
@@ -13,13 +12,13 @@ function ProductAvailability({ inStock, setQuantity, quantity }) {
             <div>
                 {inStock ? (
                     <>
-                        <div className="price d-flex flex-row align-items-center">
+                        <InStock>
                             <p style={{ color: "green", margin: "0 20px 0 0" }}>In Stock</p>
                             <label>
                                 Quantity:
                                 <input type="number" value={quantity} onChange={handleQuantityChange} min="1" max="10" />
                             </label>
-                        </div>
+                        </InStock>
                     </>
                 ) : (
                     <p style={{ color: "red", margin: "0" }}>Out of Stock</p>
@@ -28,5 +27,11 @@ function ProductAvailability({ inStock, setQuantity, quantity }) {
         </>
     )
 }
+const InStock = div.styled`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: green;
+`
 
 export default ProductAvailability
