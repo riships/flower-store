@@ -1,9 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function AddToCart() {
     const [cartItems, setCartItems] = useState([]);
 
     const [warning, setWarning] = useState("");
+    useEffect(() => {
+        const storedCartItems = localStorage.getItem("cartItems");
+        if (storedCartItems) {
+            setCartItems(JSON.parse(storedCartItems));
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    }, [cartItems]);
 
     const addToCart = (item) => {
         if (cartItems.includes(item)) {

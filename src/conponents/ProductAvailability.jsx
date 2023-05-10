@@ -1,37 +1,55 @@
 import React from "react";
 import styled from "styled-components";
-function ProductAvailability({ inStock, setQuantity, quantity }) {
+import { useState, useEffect } from 'react';
+function ProductAvailability({ inStock, setQuantity, instockQuantity, quantityAvail }) {
     const handleQuantityChange = (event) => {
         const newQuantity = event.target.value;
         if (inStock) {
             setQuantity(newQuantity);
         }
     };
+    const [maxQuantity, setMaxQuantity] = useState(1);
+
+    useEffect(() => {
+        setMaxQuantity(instockQuantity);
+    }, [instockQuantity]);
     return (
-        <>
-            <div>
-                {inStock ? (
-                    <>
-                        <InStock>
-                            <p style={{ color: "green", margin: "0 20px 0 0" }}>In Stock</p>
-                            <label>
-                                Quantity:
-                                <input type="number" value={quantity} onChange={handleQuantityChange} min="1" max="10" />
-                            </label>
-                        </InStock>
-                    </>
-                ) : (
-                    <p style={{ color: "red", margin: "0" }}>Out of Stock</p>
-                )}
-            </div>
-        </>
+        <Waraper>
+            {inStock ? (
+                <InStock>
+                    <div className="first--child--instock">
+                        <p style={{ color: "green", margin: "0 0px 0 0" }}>In Stock</p>
+                    </div>
+                    <div className="second--child--instock">
+                        <label>
+                            Quantity:
+                            <StockQua type="number" value={quantityAvail} onChange={handleQuantityChange} min="1" max={maxQuantity} />
+                        </label>
+                    </div>
+                </InStock>
+            ) : (
+                <p style={{ color: "red", margin: "0" }}>Out of Stock</p>
+            )}
+        </Waraper>
     )
 }
-const InStock = div.styled`
+const InStock = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  color: green;
+  flex-direction: row;
+  width:100%;
+  .first--child--instock{
+    width: 50%
+    }
+  .second--child--instock{
+    width: 50%
+  }
 `
+const StockQua = styled.input`
+    width:40px;
+    height:25px;
+`
+const Waraper = styled.div`
+    `
+
 
 export default ProductAvailability

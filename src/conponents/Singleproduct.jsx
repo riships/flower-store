@@ -14,10 +14,10 @@ import ProductAvailability from './ProductAvailability';
 const singleApi = "https://flower-data.onrender.com/flowers"
 
 function Singleproduct() {
-    const [quantity, setQuantity] = useState(1);
+    const [quantityAvail, setQuantity] = useState(1);
     const { getSingleFlower, singleflowers, isSingleLoading, singleError } = useProductFlowers();
     const { id } = useParams();
-    const { name, price, description, availability, ratings, images } = singleflowers;
+    const { name, price, description, availability, ratings, images, quantity } = singleflowers;
     useEffect(() => {
         getSingleFlower(`${singleApi}/${id}`);
     }, []);
@@ -56,8 +56,9 @@ function Singleproduct() {
                                                 <ProductAvailability
                                                     inStock={availability}
                                                     price={price}
-                                                    quantity={quantity}
+                                                    quantityAvail={quantityAvail}
                                                     setQuantity={setQuantity}
+                                                    instockQuantity={quantity}
 
                                                 />
                                             </div>
