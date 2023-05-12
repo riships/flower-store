@@ -1,38 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from 'react';
 
-function AddToCart() {
-    const [cartItems, setCartItems] = useState([]);
+function AddToCart({ product }) {
+  const [cart, setCart] = useState([]);
 
-    const [warning, setWarning] = useState("");
-    useEffect(() => {
-        const storedCartItems = localStorage.getItem("cartItems");
-        if (storedCartItems) {
-            setCartItems(JSON.parse(storedCartItems));
-        }
-    }, []);
-
-    useEffect(() => {
-        localStorage.setItem("cartItems", JSON.stringify(cartItems));
-    }, [cartItems]);
-
-    const addToCart = (item) => {
-        if (cartItems.includes(item)) {
-            setWarning("This item is already in the cart!");
-        } else {
-            setCartItems([...cartItems, item]);
-            setWarning("");
-        }
+  const handleAddToCart = () => {
+    const item = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      quantity: 1
     };
+    setCart(prevCart => [...prevCart, item]);
+  };
 
-    return (
-        <div>
-            <button onClick={() => addToCart("item1")}>Add to Cart</button>
-            <button onClick={() => addToCart("item2")}>Add to Cart</button>
-            <button onClick={() => addToCart("item3")}>Add to Cart</button>
-            <p>Cart Items: {cartItems.join(", ")}</p>
-            {warning && <p>{warning}</p>}
-        </div>
-    );
+  return (
+    <button onClick={handleAddToCart}>Add to Cart</button>
+  );
 }
 
 export default AddToCart;

@@ -9,11 +9,13 @@ import FormatPrice from '../Helper/FormatPrice'
 import StarRating from "./StarRating"
 import Icons from './Icons';
 import ProductAvailability from './ProductAvailability';
+// import AddToCart from './AddToCart';
 
 
 const singleApi = "https://flower-data.onrender.com/flowers"
 
 function Singleproduct() {
+    
     const [quantityAvail, setQuantity] = useState(1);
     const { getSingleFlower, singleflowers, isSingleLoading, singleError } = useProductFlowers();
     const { id } = useParams();
@@ -65,6 +67,7 @@ function Singleproduct() {
                                         </div>
                                         <p className="about">{description}</p>
                                         <Icons />
+                                        {/* <AddToCart product={product}/> */}
                                     </div>
                                 </div>
                             </div>
