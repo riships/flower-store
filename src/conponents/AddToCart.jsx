@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
-
-function AddToCart({ product }) {
+import { useParams } from 'react-router-dom'
+function AddToCart({ product,quantityForPurchase }) {
+  const { id } = useParams();
   const [cart, setCart] = useState([]);
 
   const handleAddToCart = () => {
     const item = {
-      id: product.id,
+      id: id,
       name: product.name,
       price: product.price,
-      quantity: 1
+      quantity: quantityForPurchase
     };
     setCart(prevCart => [...prevCart, item]);
   };
+  console.log(cart);
 
   return (
     <button onClick={handleAddToCart}>Add to Cart</button>
