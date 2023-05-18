@@ -67,8 +67,9 @@ function Singleproduct() {
                                         </div>
                                         <p className="about">{description}</p>
                                         <Icons />
-                                        <AddToCart product={singleflowers}
-                                            quantityForPurchase={setQuantity}
+                                        <AddToCart 
+                                        product={singleflowers}
+                                        quantityForPurchase={setQuantity}
                                         />
                                     </div>
                                 </div>

@@ -29,11 +29,19 @@ const CartItem = styled.div`
 
 
 function Cart() {
-    return (
-        <>
-           <div>Hello</div>
-        </>
-    )
+  return (
+    <>
+      <CartContainer>
+        <CartItem>
+          <img src="path/to/image.jpg" alt="Product" />
+          <div>
+            <p>Product Name</p>
+            <p>$99.99</p>
+          </div>
+        </CartItem>
+      </CartContainer>
+    </>
+  )
 }
 
 export default Cart

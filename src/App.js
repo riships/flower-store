@@ -13,7 +13,7 @@ import Errorpage from "../src/conponents/Errorpage";
 import Cart from "../src/conponents/Cart";
 // import ApiData from "./conponents/ApiData";
 
-const Wrapper = styled.header`
+const Wrapper = styled.div`
     height:70px;
 `;
 
