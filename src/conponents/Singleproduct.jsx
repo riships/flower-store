@@ -15,7 +15,7 @@ import AddToCart from './AddToCart';
 const singleApi = "https://flower-data.onrender.com/flowers"
 
 function Singleproduct() {
-    
+
     const [quantityAvail, setQuantity] = useState(1);
     const { getSingleFlower, singleflowers, isSingleLoading, singleError } = useProductFlowers();
     const { id } = useParams();
@@ -67,9 +67,9 @@ function Singleproduct() {
                                         </div>
                                         <p className="about">{description}</p>
                                         <Icons />
-                                        <AddToCart 
-                                        product={singleflowers}
-                                        quantityForPurchase={setQuantity}
+                                        <AddToCart
+                                            product={singleflowers}
+                                            quantityForPurchase={setQuantity}
                                         />
                                     </div>
                                 </div>
