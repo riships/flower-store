@@ -5,13 +5,20 @@ const FilterContext = createContext();
 const initialState = {
     filter_flowers: [],
     all_flowers: [],
+    gridView: true,
 }
 
 export const FilterContextProvider = ({ children }) => {
     const { flowers } = useProductFlowers();
     // console.log(flowers);
-
     const [state, dispatch] = useReducer(reducer, initialState);
+
+
+    // to set grid in view
+
+    const setGridView = () => {
+        return dispatch({ tyoe: "SET_GRID_VIEW" })
+    }
 
     useEffect(() => {
         dispatch({
@@ -21,7 +28,7 @@ export const FilterContextProvider = ({ children }) => {
     }, [])
 
     return (
-        <FilterContext.Provider value={{ ...state }}>
+        <FilterContext.Provider value={{ ...state, setGridView }}>
             {children}
         </FilterContext.Provider>
     );

@@ -2,7 +2,6 @@ import React from "react";
 import About from "../src/conponents/About";
 import Contact from "../src/conponents/Contact";
 import Home from "../src/conponents/Home";
-import Work from "../src/conponents/Work";
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 import { BsFillCartFill } from 'react-icons/bs';
 import { useState } from 'react'
@@ -11,7 +10,7 @@ import Singleproduct from "../src/conponents/Singleproduct";
 import styled from 'styled-components';
 import Errorpage from "../src/conponents/Errorpage";
 import Cart from "../src/conponents/Cart";
-// import ApiData from "./conponents/ApiData";
+import AllProduct from "./conponents/AllProduct";
 
 const Wrapper = styled.div`
     height:70px;
@@ -37,8 +36,8 @@ function App() {
       link: "/contact",
     },
     {
-      text: "Work",
-      link: "/work"
+      text: "Store",
+      link: "/allproduuct"
     }
     // {
     //   text: "Apidata",
@@ -71,7 +70,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/work' element={<Work />} />
+          <Route path='/allproduuct' element={<AllProduct />} />
           <Route path="/singleproduct/:id" element={<Singleproduct />} />
           <Route path="/cart" element={<Cart />} />
           {/* <Route path="/apidata" element={<ApiData />} /> */}
