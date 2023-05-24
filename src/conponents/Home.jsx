@@ -1,11 +1,11 @@
 import React from 'react'
-import Store from './Store'
+import WelcomeSection from './WelcomeSection'
 import FlowerType from './FlowerType'
 
 function Home() {
     return (
         <div>
-            <Store />
+            <WelcomeSection />
             <FlowerType />
         </div>
     )
