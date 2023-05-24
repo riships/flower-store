@@ -37,7 +37,7 @@ function App() {
     },
     {
       text: "Store",
-      link: "/allproduuct"
+      link: "/allproduct"
     }
     // {
     //   text: "Apidata",
@@ -70,7 +70,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/allproduuct' element={<AllProduct />} />
+          <Route path='/allproduct' element={<AllProduct />} />
           <Route path="/singleproduct/:id" element={<Singleproduct />} />
           <Route path="/cart" element={<Cart />} />
           {/* <Route path="/apidata" element={<ApiData />} /> */}
