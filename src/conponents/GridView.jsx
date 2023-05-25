@@ -1,6 +1,7 @@
 import React from 'react';
-import { Card, CardContent, CardMedia, Typography, CardActionArea } from '@mui/material';
-// import { CardActionArea } from '@mui/material';
+import { Card, CardContent, CardMedia, Typography, CardActionArea, Button } from '@mui/material';
+// import '../stylesheets/common.css';
+
 
 
 function GridView({ product }) {
@@ -9,10 +10,10 @@ function GridView({ product }) {
         {
             product.map((curEle) => {
                 const { images, id, name, description } = curEle;
-                return <div className='flower-grid-conatiner col-lg-4 col-md-6'>
-                    <Card sx={{ maxWidth: 345 }} key={id}>
+                return <div className='grid-container'>
+                    <Card sx={{ maxWidth: 345 }} key={id} className='grd'>
                         <CardActionArea>
-                            <CardMedia component="img" height="140" image={images[0].url}
+                            <CardMedia component="img" height="250" image={images[0].url}
                                 alt={name} />
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="div">
@@ -23,8 +24,9 @@ function GridView({ product }) {
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
-                    </Card>
-                </div>
+                        <Button variant="primary">Go somewhere</Button>
+                    </Card >
+                </div >
 
                 //     <Card className='col-md-4' key={id}>
                 //     <Card.Img variant="top" src={images[0].url} />
@@ -38,7 +40,7 @@ function GridView({ product }) {
                 // </Card >
             })
         }
-    </div>
+    </div >
     );
 }
 

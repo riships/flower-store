@@ -409,3 +409,31 @@
         align-items: center;
     }
 }
+
+.container2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100vh;
+    /* background-color: #f5f5f5; */
+    font-family: 'Baloo Paaji 2', cursive;
+    padding: 10px;
+}
+
+.grid-container {
+    /* display: inline-grid; */
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.7);
+    /* color: white; */
+    margin: 25px;
+}
+
+.crd {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #222831;
+    border-radius: 5px;
+}
