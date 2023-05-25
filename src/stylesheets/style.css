@@ -437,3 +437,8 @@
     background-color: #222831;
     border-radius: 5px;
 }
+
+.store-image {
+    padding: 15px;
+    box-shadow: -31px -29px 5px 0px rgba(0, 0, 0, 0.75);
+}

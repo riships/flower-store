@@ -1,6 +1,8 @@
 import React from 'react';
-import { Card, CardContent, CardMedia, Typography, CardActionArea, Button } from '@mui/material';
+import { Card, CardContent, CardMedia, Typography, CardActionArea } from '@mui/material';
 // import '../stylesheets/common.css';
+import { Link } from "react-router-dom";
+
 
 
 
@@ -11,10 +13,14 @@ function GridView({ product }) {
             product.map((curEle) => {
                 const { images, id, name, description } = curEle;
                 return <div className='grid-container'>
+
                     <Card sx={{ maxWidth: 345 }} key={id} className='grd'>
+
                         <CardActionArea>
-                            <CardMedia component="img" height="250" image={images[0].url}
-                                alt={name} />
+                            <Link to={`/singleproduct/${id}`}>
+                                <CardMedia component="img" height="250" image={images[0].url}
+                                    alt={name} className='store-image' />
+                            </Link>
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="div">
                                     {name}
@@ -24,20 +30,9 @@ function GridView({ product }) {
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card >
-                </div >
+                    </Card>
 
-                //     <Card className='col-md-4' key={id}>
-                //     <Card.Img variant="top" src={images[0].url} />
-                //     <Card.Body>
-                //         <Card.Title>{name}</Card.Title>
-                //         <Card.Text>
-                //             {description}
-                //         </Card.Text>
-                //         <Button variant="primary">Go somewhere</Button>
-                //     </Card.Body>
-                // </Card >
+                </div>
             })
         }
     </div >
