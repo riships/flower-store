@@ -5,6 +5,7 @@ import reducer from "../reducers/filterReducers";
 const FilterContext = createContext();
 
 const initialState = {
+    isLoading: false,
     filter_flowers: [],
     all_flowers: [],
     grid_view: true,

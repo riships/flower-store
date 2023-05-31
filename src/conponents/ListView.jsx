@@ -1,28 +1,37 @@
 import React from 'react'
-import { CRow, CRow, CCardImage, CCardBody, CCardText } from 'react-bootstrap';
+import { Row, CardImg, Card, CardText, Col, CardTitle } from 'reactstrap';
+import { Link } from "react-router-dom";
 
 
-function ListView() {
-    return (
-        <CCard className="mb-3" style={{ maxWidth: '540px' }}>
-            <CRow className="g-0">
-                <CCol md={4}>
-                    <CCardImage src="/images/react400.jpg" />
-                </CCol>
-                <CCol md={8}>
-                    <CCardBody>
-                        <CCardTitle>Card title</CCardTitle>
-                        <CCardText>
-                            This is a wider card with supporting text below as a natural lead-in to additional
-                            content. This content is a little bit longer.
-                        </CCardText>
-                        <CCardText>
-                            <small className="text-medium-emphasis">Last updated 3 mins ago</small>
-                        </CCardText>
-                    </CCardBody>
-                </CCol>
-            </CRow>
-        </CCard>
+
+function ListView({ product }) {
+    console.table(product)
+    return (<div>
+        {
+            product.map((curEle) => {
+                const { images, id, name, description } = curEle;
+                return <Card className="mb-3" key={id} style={{ maxWidth: '540px' }}>
+                    <Row className="g-0">
+                        <Col md={4}>
+                            <Link to={`/singleproduct/${id}`}>
+                                <CardImg src={images[0].url} alt={name} />
+                            </Link>
+                        </Col>
+                        <Col md={8}>
+                            <Card>
+                                <CardTitle>{name}</CardTitle>
+                                <CardText>{description}
+                                </CardText>
+                                <CardText>
+                                    <small className="text-medium-emphasis">Last updated 3 mins ago</small>
+                                </CardText>
+                            </Card>
+                        </Col>
+                    </Row>
+                </Card>
+            })
+        }
+    </div>
     )
 }
 
