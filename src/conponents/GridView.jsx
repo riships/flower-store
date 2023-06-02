@@ -31,7 +31,6 @@ function GridView({ product }) {
                             </CardContent>
                         </CardActionArea>
                     </Card>
-
                 </div>
             })
         }

@@ -39,7 +39,9 @@ function FlowerType() {
                                         </span>
                                     ))}
                                 </div> */}
-                                <button className="product-button">Add to Cart</button>
+                                <Link to={`/singleproduct/${flower.id}`}>
+                                    <button className="product-button">Add to Cart</button>
+                                </Link>
                             </div>
                         </div>
                     );

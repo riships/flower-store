@@ -1,5 +1,7 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import React from 'react'
+import { Container, Row, Col } from 'react-bootstrap'
+// import styled from 'styled-components'
+// import MainPhoto from '../stylesheets/img/flower2.png'
 
 function About() {
     const storeData = {
@@ -16,7 +18,9 @@ function About() {
             </Row>
             <Row>
                 <Col xs={12} md={6}>
-
+                    <div>
+                        {/* <StyledImage src={MainPhoto} alt="Your-Image" /> */}
+                    </div>
                 </Col>
                 <Col xs={12} md={6}>
                     <h1>Welcome to {storeData.name}</h1>
@@ -67,5 +71,8 @@ function About() {
         </Container >
     );
 }
+// const StyledImage = styled.img`
+// box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+// `
 
 export default About;
