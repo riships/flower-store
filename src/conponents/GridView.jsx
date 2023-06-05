@@ -2,13 +2,15 @@ import React from 'react';
 import { Card, CardContent, CardMedia, Typography, CardActionArea } from '@mui/material';
 // import '../stylesheets/common.css';
 import { Link } from "react-router-dom";
-
-
+import Sort from './Sort';
 
 
 function GridView({ product }) {
-    console.log(product);
-    return (<div className="container2">
+    // console.log(product);
+    return (<>
+        <Sort />
+        <div className="container2">
+
         {
             product.map((curEle) => {
                 const { images, id, name, description } = curEle;
@@ -35,6 +37,7 @@ function GridView({ product }) {
             })
         }
     </div >
+    </>
     );
 }
 

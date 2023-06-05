@@ -6,6 +6,7 @@ import ListView from './ListView'
 const AllProduct = () => {
     const { filter_flowers, grid_view, isLoading } = useFilterContext();
     const [isGridView, setIsGridView] = useState(grid_view);
+
     if (isLoading) {
         return <div>Loading...</div>;
     }
