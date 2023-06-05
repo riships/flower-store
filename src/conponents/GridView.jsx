@@ -7,7 +7,7 @@ import Sort from './Sort';
 
 function GridView({ product }) {
     // console.log(product);
-    return (<>
+    return (<div>
         <Sort />
         <div className="container2">
 
@@ -36,8 +36,8 @@ function GridView({ product }) {
                 </div>
             })
         }
-    </div >
-    </>
+        </div>
+    </div>
     );
 }
 

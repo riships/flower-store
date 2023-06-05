@@ -27,6 +27,7 @@
         width: 100%;
         align-items: center;
         background-color: #D4F4F86B;
+        margin-bottom: 20px;
     }
 
     .hdr_menu a {
@@ -96,13 +97,13 @@
 
 @media (max-width:950px) {
     .hdr_menu {
-        margin: 0px 0px 0px 0px;
         display: flex;
         align-items: flex-end;
         float: right;
         width: 100%;
         align-items: center;
         background-color: #D4F4F86B;
+        margin-bottom: 20px;
     }
 
     .hero-section-data {

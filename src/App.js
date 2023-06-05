@@ -46,7 +46,6 @@ function App() {
   ];
   return (
     <>
-
       <BrowserRouter>
         <Wrapper className="hamburger-menu hdr_menu">
           <label onClick={toggleMenu} className="menu_btn">

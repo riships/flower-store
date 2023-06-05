@@ -9,7 +9,9 @@ function Sort() {
             <FaThList />
             <BsFillGrid3X3GapFill />
         </div>
-        <div>center</div>
+        <div>
+
+        </div>
         <div>right</div>
     </Wraper>
     )
@@ -20,7 +22,9 @@ display:flex;
 justify-content:space-between;
 padding:15px 0;
 /* margin:30px 0; */
-background-color: #f5f5f5;
+background-color: #f5f5f561;
+border-radius: 25px;
+box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.21);
 `
 
 export default Sort
