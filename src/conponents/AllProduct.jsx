@@ -5,26 +5,29 @@ import ListView from './ListView'
 import Sort from './Sort'
 
 const AllProduct = () => {
-    const { filter_flowers, grid_view, isLoading, setGridView } = useFilterContext()
-
-    const handleGridViewChange = (newValue) => {
-        setGridView(newValue)
-    }
+    const { filter_flowers, grid_view, isLoading } = useFilterContext()
 
     if (isLoading) {
-      return <div>Loading...</div>
-  }
+        return <div>Loading...</div>
+    }
 
-    return (
-        <div>
-            <Sort value={grid_view} onChange={handleGridViewChange} />
-            {grid_view ? (
+    if (grid_view === true) {
+        return (
+            <div>
+                <Sort value={grid_view} />
                 <GridView product={filter_flowers} />
-            ) : (
-                <ListView product={filter_flowers} />
-            )}
+            </div>
+        )
+    }
+
+    if (grid_view === false) {
+        return (
+            <div>
+                <Sort value={grid_view} />
+            <ListView product={filter_flowers} />
         </div>
     )
+    }
 }
 
 export default AllProduct
