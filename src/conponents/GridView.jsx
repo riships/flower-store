@@ -2,13 +2,11 @@ import React from 'react';
 import { Card, CardContent, CardMedia, Typography, CardActionArea } from '@mui/material';
 // import '../stylesheets/common.css';
 import { Link } from "react-router-dom";
-import Sort from './Sort';
 
 
 function GridView({ product }) {
     // console.log(product);
     return (<div>
-        <Sort />
         <div className="container2">
 
         {

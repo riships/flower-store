@@ -1,28 +1,30 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useFilterContext } from './context/filter-context'
 import GridView from './GridView'
 import ListView from './ListView'
+import Sort from './Sort'
 
 const AllProduct = () => {
-    const { filter_flowers, grid_view, isLoading } = useFilterContext();
-    const [isGridView, setIsGridView] = useState(grid_view);
+    const { filter_flowers, grid_view, isLoading, setGridView } = useFilterContext()
+
+    const handleGridViewChange = (newValue) => {
+        setGridView(newValue)
+    }
 
     if (isLoading) {
-        return <div>Loading...</div>;
-    }
-    if (grid_view === true) {
-        return <GridView product={filter_flowers} />
-    }
-    if (grid_view === false) {
-        return <ListView product={filter_flowers} />
-    }
+      return <div>Loading...</div>
+  }
+
     return (
-        <button onClick={() => setIsGridView(!isGridView)}>
-            {isGridView ? 'Switch to List View' : 'Switch to Grid View'}
-        </button>
-    );
-
-
-};
+        <div>
+            <Sort value={grid_view} onChange={handleGridViewChange} />
+            {grid_view ? (
+                <GridView product={filter_flowers} />
+            ) : (
+                <ListView product={filter_flowers} />
+            )}
+        </div>
+    )
+}
 
 export default AllProduct
