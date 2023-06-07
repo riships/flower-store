@@ -75,7 +75,7 @@ function App() {
           {/* <Route path="/apidata" element={<ApiData />} /> */}
           <Route path="*" element={<Errorpage />} />
         </Routes>
-      </BrowserRouter >
+      </BrowserRouter>
     </>
   );
 

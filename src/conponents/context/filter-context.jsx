@@ -8,7 +8,7 @@ const initialState = {
     isLoading: false,
     filter_flowers: [],
     all_flowers: [],
-    grid_view: true,
+    grid_view: null,
 }
 
 export const FilterContextProvider = ({ children }) => {

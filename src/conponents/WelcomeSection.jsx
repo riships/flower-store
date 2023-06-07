@@ -24,7 +24,7 @@ function Store() {
                         </div>
                     </div>
                 </div>
-            </div >
+            </div>
         </>
 
     )
