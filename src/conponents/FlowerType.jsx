@@ -16,7 +16,7 @@ function FlowerType() {
             <div className="flowerTyp">
                 <GridView product={flowerType} />
             </div>
-        </div >
+        </div>
     );
 
 }

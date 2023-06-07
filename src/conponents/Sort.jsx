@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { FaThList } from 'react-icons/fa'
 import { BsFillGrid3X3GapFill } from 'react-icons/bs'
 
+
 function Sort({ value, onChange }) {
     const handleIconClick = (newValue) => {
         onChange(newValue)

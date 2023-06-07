@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 
 function ListView({ product }) {
-    console.table(product)
     return (<div>
         {
             product.map((curEle) => {

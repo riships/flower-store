@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom'
-function AddToCart({ product,quantityForPurchase }) {
+function AddToCart({ product, quantityForPurchase }) {
   const { id } = useParams();
   const [cart, setCart] = useState([]);
 
