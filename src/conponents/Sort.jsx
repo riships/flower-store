@@ -13,13 +13,13 @@ function Sort({ value, onChange }) {
             <div>
                 <IconWrapper
                     active={!value}
-                    onClick={() => handleIconClick(true)}
+                    onClick={() => handleIconClick(false)}
                 >
                     <FaThList />
                 </IconWrapper>
                 <IconWrapper
                     active={value}
-                    onClick={() => handleIconClick(false)}
+                    onClick={() => handleIconClick(true)}
                 >
                     <BsFillGrid3X3GapFill />
                 </IconWrapper>

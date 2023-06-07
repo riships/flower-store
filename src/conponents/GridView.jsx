@@ -8,13 +8,11 @@ function GridView({ product }) {
     // console.log(product);
     return (<div>
         <div className="container2">
-
         {
-            product.map((curEle) => {
+                product.map((curEle, index) => {
                 const { images, id, name, description } = curEle;
-                return <div className='grid-container'>
-
-                    <Card sx={{ maxWidth: 345 }} key={id} className='grd'>
+                    return <div className='grid-container' key={index}>
+                        <Card sx={{ maxWidth: 345 }} className='grd'>
 
                         <CardActionArea>
                             <Link to={`/singleproduct/${id}`}>
