@@ -15,7 +15,7 @@
 
 .containr {
     max-width: 120rem;
-    margin-top: 0 auto;
+    margin-top: 40px auto;
 }
 
 @media (min-width:949px) {
@@ -442,4 +442,11 @@
 .store-image {
     padding: 15px;
     box-shadow: -31px -29px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.wel--bg {
+    background-image: url('../stylesheets/img/blue-flowers.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }

@@ -11,7 +11,7 @@ function FlowerType() {
         return <div>Loading...</div>;
     }
     return (
-        <div>
+        <section>
             <h1 className="flwr-tp">Flower Type</h1>
             <div className="flowerTyp">
                 {flowerType.map((flower, index) => {
@@ -34,7 +34,7 @@ function FlowerType() {
                     );
                 })}
             </div>
-        </div>
+        </section>
     );
 }
 

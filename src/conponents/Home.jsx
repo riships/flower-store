@@ -5,11 +5,11 @@ import About from './About'
 
 function Home() {
     return (
-        <div>
+        <>
             <WelcomeSection />
             <FlowerType />
             <About />
-        </div>
+        </>
     )
 }
 
