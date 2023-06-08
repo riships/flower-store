@@ -36,7 +36,6 @@ function FlowerType() {
             </div>
         </div>
     );
-
 }
 
 export default FlowerType
