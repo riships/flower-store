@@ -6,13 +6,6 @@
     font-style: normal;
 }
 
-/* .bkground {
-    background-image: url('https://user-images.githubusercontent.com/116996040/210163566-ef877352-7dce-4067-8c8c-5fb26163d9ee.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-} */
-
 .containr {
     max-width: 120rem;
     margin-top: 40px auto;
@@ -23,11 +16,9 @@
         padding: 20px 0px 20px 0px;
         display: flex;
         align-items: flex-end;
-        float: right;
         width: 100%;
         align-items: center;
         background-color: #D4F4F86B;
-        margin-bottom: 20px;
     }
 
     .hdr_menu a {
@@ -99,11 +90,9 @@
     .hdr_menu {
         display: flex;
         align-items: flex-end;
-        float: right;
         width: 100%;
         align-items: center;
         background-color: #D4F4F86B;
-        margin-bottom: 20px;
     }
 
     .hero-section-data {
@@ -128,10 +117,6 @@
         top: 0 !important;
         transform: rotate(90deg);
     }
-
-    /* #menu_toggle:checked~.menu_box {
-        visibility: visible !important;
-    } */
 
     .menu_btn {
         position: absolute;
@@ -164,14 +149,7 @@
         top: 8px;
     }
 
-    /* .hdr_menu {
-        display: flex;
-        flex-flow: column;
-        margin: 0px auto;
-    } */
-
     .show {
-        /* visibility: visible !important; */
         display: block !important;
     }
 
@@ -188,7 +166,6 @@
         background-color: #57D8E9A3;
         box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
         transition: 0.1s;
-        /* visibility: hidden; */
         z-index: 998;
     }
 
@@ -199,7 +176,6 @@
         font-size: 14px;
         font-weight: 500;
         text-decoration: none;
-        /* transition-duration: .25s; */
     }
 
     .hdr_menu a:hover,
@@ -416,18 +392,15 @@
     flex-wrap: wrap;
     justify-content: center;
     height: 100vh;
-    /* background-color: #f5f5f5; */
     font-family: 'Baloo Paaji 2', cursive;
     padding: 10px;
 }
 
 .grid-container {
-    /* display: inline-grid; */
     grid-template-columns: auto auto auto;
     align-items: center;
     justify-content: center;
     box-shadow: rgba(0, 0, 0, 0.7);
-    /* color: white; */
     margin: 25px;
 }
 
@@ -449,4 +422,12 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+}
+
+.hamburger-menu {
+    position: relative;
+}
+
+.menu-open .menu_box {
+    display: flex;
 }

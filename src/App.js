@@ -12,7 +12,7 @@ import Errorpage from "../src/conponents/Errorpage";
 import Cart from "../src/conponents/Cart";
 import AllProduct from "./conponents/AllProduct";
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
     height:70px;
 `;
 
@@ -39,44 +39,37 @@ function App() {
       text: "Store",
       link: "/allproduct"
     }
-    // {
-    //   text: "Apidata",
-    //   link: "/apidata"
-    // }
   ];
   return (
-    <>
-      <BrowserRouter>
-        <Wrapper className="hamburger-menu hdr_menu">
-          <label onClick={toggleMenu} className="menu_btn">
-            <span className={`menu_btn__inactive ${isOpen ? 'menu_btn__active' : ''}`}></span>
-          </label>
+    <BrowserRouter>
+      <Wrapper className={`hamburger-menu hdr_menu ${isOpen ? 'menu-open' : ''}`}>
+        <label onClick={toggleMenu} className="menu_btn">
+          <span className={`menu_btn__inactive ${isOpen ? 'menu_btn__active' : ''}`}></span>
+        </label>
 
-          <div className={`menu_box ${isOpen ? 'show' : ''}`}>
-            {menuItems.map((menuItem, index) => (
-              <div className="mnu_link" key={index}>
-                <Link onClick={toggleMenu} to={menuItem.link}>{menuItem.text}</Link>
-              </div>
-            ))}
-            <div className="mnu_link cart-trolley--link">
-              <Link to="/cart"><BsFillCartFill className="cart-trolley" />
-                <span className="cart-total--item">10</span>
-              </Link>
+        <div className={`menu_box ${isOpen ? 'show' : ''}`}>
+          {menuItems.map((menuItem, index) => (
+            <div className="mnu_link" key={index}>
+              <Link onClick={toggleMenu} to={menuItem.link}>{menuItem.text}</Link>
             </div>
+          ))}
+          <div className="mnu_link cart-trolley--link">
+            <Link to="/cart"><BsFillCartFill className="cart-trolley" />
+              <span className="cart-total--item">10</span>
+            </Link>
           </div>
-        </Wrapper>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/allproduct' element={<AllProduct />} />
-          <Route path="/singleproduct/:id" element={<Singleproduct />} />
-          <Route path="/cart" element={<Cart />} />
-          {/* <Route path="/apidata" element={<ApiData />} /> */}
-          <Route path="*" element={<Errorpage />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+        </div>
+      </Wrapper>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/allproduct' element={<AllProduct />} />
+        <Route path="/singleproduct/:id" element={<Singleproduct />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="*" element={<Errorpage />} />
+      </Routes>
+    </BrowserRouter>
   );
 
 };
