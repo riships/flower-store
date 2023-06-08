@@ -54,7 +54,7 @@ function Icons() {
                     </PointsBox>}
                     <IconText>30 Days Warranty</IconText>
                 </BtnGroup>
-            </AllBtnIcons >
+            </AllBtnIcons>
         </>
     )
 }
