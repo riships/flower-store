@@ -3,7 +3,8 @@ gb .card {
 }
 
 .product {
-    background-color: #eee
+    background-color: #eee;
+    height: 100%;
 }
 
 .brand {

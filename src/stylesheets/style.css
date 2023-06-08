@@ -52,7 +52,7 @@
     }
 
     .single--pro-pad {
-        padding: 1.5rem;
+        padding: 1rem;
     }
 
     .single--pro-pad2 {
@@ -308,7 +308,7 @@
     }
 
     .single--pro-pad {
-        padding: 1.5rem;
+        padding: 1rem;
     }
 
     .single--pro-pad2 {
@@ -348,7 +348,7 @@
     }
 
     .single--pro-pad {
-        padding: 1.5rem;
+        padding: 1rem;
     }
 
     .single--pro-pad2 {
@@ -418,7 +418,7 @@
 }
 
 .wel--bg {
-    background-image: url('../stylesheets/img/blue-flowers.jpg');
+    background-image: url('../stylesheets/img/light-blue.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;

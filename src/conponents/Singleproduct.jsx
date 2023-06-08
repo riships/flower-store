@@ -10,10 +10,7 @@ import StarRating from "./StarRating"
 import Icons from './Icons';
 import ProductAvailability from './ProductAvailability';
 import AddToCart from './AddToCart';
-
-
 const singleApi = "https://flower-data.onrender.com/flowers"
-
 function Singleproduct() {
 
     const [quantityAvail, setQuantity] = useState(1);

@@ -1,18 +1,22 @@
 import React from "react";
 import styled from "styled-components";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 function ProductAvailability({ inStock, setQuantity, instockQuantity, quantityAvail }) {
-    const handleQuantityChange = (event) => {
-        const newQuantity = event.target.value;
-        if (inStock) {
-            setQuantity(newQuantity);
+    const [quantity, setQuantit] = useState(1);
+
+    const incrementQuantity = () => {
+        setQuantit(quantity < instockQuantity);
+    };
+
+    const decrementQuantity = () => {
+        if (quantity > 1) {
+            setQuantit(quantity - 1);
         }
     };
-    const [maxQuantity, setMaxQuantity] = useState(1);
-
-    useEffect(() => {
-        setMaxQuantity(instockQuantity);
-    }, [instockQuantity]);
+    const addToCart = () => {
+        // Perform necessary actions with the quantity, such as adding it to the cart or submitting it to a server.
+        console.log(`Added ${quantity} items to the cart.`);
+    };
     return (
         <Waraper>
             {inStock ? (
@@ -21,10 +25,14 @@ function ProductAvailability({ inStock, setQuantity, instockQuantity, quantityAv
                         <p style={{ color: "green", margin: "0 0px 0 0" }}>In Stock</p>
                     </div>
                     <div className="second--child--instock">
-                        <label>
-                            Quantity:
-                            <StockQua type="number" value={quantityAvail} onChange={handleQuantityChange} min="1" max={maxQuantity} />
-                        </label>
+                        <div className="quantity-select">
+                            <label>Quantity: {setQuantity}</label>
+                            <div>
+                                <button onClick={incrementQuantity}>+</button>
+                                <button onClick={decrementQuantity}>-</button>
+                            </div>
+                            <button onClick={addToCart}>Add to Cart</button>
+                        </div>
                     </div>
                 </InStock>
             ) : (
@@ -43,10 +51,6 @@ const InStock = styled.div`
   .second--child--instock{
     width: 50%
   }
-`
-const StockQua = styled.input`
-    width:40px;
-    height:25px;
 `
 const Waraper = styled.div`
     `
