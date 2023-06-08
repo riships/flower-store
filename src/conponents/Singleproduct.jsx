@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useProductFlowers } from './context/productcontext';
 import '../stylesheets/singleProduct.css';
@@ -12,8 +12,6 @@ import ProductAvailability from './ProductAvailability';
 import AddToCart from './AddToCart';
 const singleApi = "https://flower-data.onrender.com/flowers"
 function Singleproduct() {
-
-    const [quantityAvail, setQuantity] = useState(1);
     const { getSingleFlower, singleflowers, isSingleLoading, singleError } = useProductFlowers();
     const { id } = useParams();
     const { name, price, description, availability, ratings, images, quantity } = singleflowers;
@@ -55,8 +53,6 @@ function Singleproduct() {
                                                 <ProductAvailability
                                                     inStock={availability}
                                                     price={price}
-                                                    quantityAvail={quantityAvail}
-                                                    setQuantity={setQuantity}
                                                     instockQuantity={quantity}
 
                                                 />
@@ -66,7 +62,6 @@ function Singleproduct() {
                                         <Icons />
                                         <AddToCart
                                             product={singleflowers}
-                                            quantityForPurchase={setQuantity}
                                         />
                                     </div>
                                 </div>

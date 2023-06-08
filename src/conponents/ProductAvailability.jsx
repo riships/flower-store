@@ -1,22 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 import { useState } from 'react';
-function ProductAvailability({ inStock, setQuantity, instockQuantity, quantityAvail }) {
+function ProductAvailability({ inStock, instockQuantity, product }) {
+
+
     const [quantity, setQuantit] = useState(1);
 
     const incrementQuantity = () => {
-        setQuantit(quantity < instockQuantity);
+        if (quantity < instockQuantity) {
+            setQuantit(quantity + 1);
+        }
     };
 
     const decrementQuantity = () => {
         if (quantity > 1) {
             setQuantit(quantity - 1);
         }
-    };
-    const addToCart = () => {
-        // Perform necessary actions with the quantity, such as adding it to the cart or submitting it to a server.
-        console.log(`Added ${quantity} items to the cart.`);
-    };
+    }
     return (
         <Waraper>
             {inStock ? (
@@ -26,12 +26,9 @@ function ProductAvailability({ inStock, setQuantity, instockQuantity, quantityAv
                     </div>
                     <div className="second--child--instock">
                         <div className="quantity-select">
-                            <label>Quantity: {setQuantity}</label>
-                            <div>
-                                <button onClick={incrementQuantity}>+</button>
-                                <button onClick={decrementQuantity}>-</button>
-                            </div>
-                            <button onClick={addToCart}>Add to Cart</button>
+                            <InDe onClick={incrementQuantity}>+</InDe>
+                            <label>Quantity: {quantity}</label>
+                            <InDe onClick={decrementQuantity}>-</InDe>
                         </div>
                     </div>
                 </InStock>
@@ -46,14 +43,27 @@ const InStock = styled.div`
   flex-direction: row;
   width:100%;
   .first--child--instock{
-    width: 50%
+    width: 60%;
+    padding:5px;
     }
   .second--child--instock{
-    width: 50%
+    width: 40%
   }
 `
 const Waraper = styled.div`
+    width:100%;
+    margin: 15px auto;
+    .quantity-select{
+        display:flex;
+        flext-direction:row;
+        
+    }
     `
+const InDe = styled.button`
+padding:4px 0;
+width:35px;
+border-radius:50px;
+`
 
 
 export default ProductAvailability

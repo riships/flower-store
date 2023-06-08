@@ -12,8 +12,8 @@ function MulImages({ imags = [{ "url": '' }] }) {
             {
                 imags.map((curElm, index) => {
                     return (
-                        <figure>
-                            <img src={curElm.url} key={index} alt='product-img' className='singl--prdct--img' onClick={() => setMainImge(curElm)} />
+                        <figure key={index}>
+                            <img src={curElm.url} alt='product-img' className='singl--prdct--img' onClick={() => setMainImge(curElm)} />
                         </figure>
                     )
                 })

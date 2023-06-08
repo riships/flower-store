@@ -1,45 +1,17 @@
-import React from 'react'
-// import AddToCart from './AddToCart'
-import styled from 'styled-components';
-
-const CartContainer = styled.div`
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-`;
-
-// Create a styled component for the cart item
-const CartItem = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-
-  img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-right: 20px;
-  }
-
-  p {
-    margin: 0;
-  }
-`;
+import React, { useState } from 'react'
+import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
-function Cart() {
+function Cart({ product }) {
+  const { id, colors, stock } = product;
+  const [flower, setflower] = useState(flower[0]);
+
   return (
     <>
-      <CartContainer>
-        <CartItem>
-          <img src="path/to/image.jpg" alt="Product" />
-          <div>
-            <p>Product Name</p>
-            <p>$99.99</p>
-          </div>
-        </CartItem>
-      </CartContainer>
+      <Link to="/cart">
+        <Button>Add To Cart</Button>
+      </Link>
     </>
   )
 }
