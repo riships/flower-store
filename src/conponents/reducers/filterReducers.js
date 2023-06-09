@@ -11,6 +11,14 @@ const filterReducers = (state, action) => {
                 ...state,
                 grid_view: true,
             };
+
+        case "SET_SORT_VALUE":
+            let userSortValue = document.getElementById("sort");
+            let sort_value = userSortValue.options[userSortValue.selectedIndex].value;
+            return {
+                ...state,
+                sorting_flowers: sort_value,
+            }
         default:
             return state;
     }

@@ -68,7 +68,7 @@ function About() {
                 </Col>
 
             </Row>
-        </Container >
+        </Container>
     );
 }
 // const StyledImage = styled.img`

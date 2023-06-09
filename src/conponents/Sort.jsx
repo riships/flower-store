@@ -11,6 +11,7 @@ function Sort({ value, onChange }) {
 
     return (
         <Wrapper>
+            {/* first column */}
             <div>
                 <IconWrapper
                     active={!value}
@@ -25,7 +26,15 @@ function Sort({ value, onChange }) {
                     <BsFillGrid3X3GapFill />
                 </IconWrapper>
             </div>
+            {/* second column */}
+            <div>
+                <from action="#">
+                    <label htmlFor='sort'></label>
+                    <select name="sort" id="sort"></select>
+                </from>
+            </div>
             <div>right</div>
+
         </Wrapper>
     )
 }

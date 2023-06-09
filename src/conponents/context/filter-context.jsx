@@ -9,6 +9,7 @@ const initialState = {
     filter_flowers: [],
     all_flowers: [],
     grid_view: null,
+    sorting_flowers: "lowest",
 }
 
 export const FilterContextProvider = ({ children }) => {
@@ -22,6 +23,10 @@ export const FilterContextProvider = ({ children }) => {
 
     const setGridView = () => {
         return dispatch({ type: "SET_GRID_VIEW" })
+    };
+    // sorting function
+    const sorting = () => {
+        dispatch({ type: "SET_SORT_VALUE" })
     }
 
     useEffect(() => {
@@ -32,7 +37,7 @@ export const FilterContextProvider = ({ children }) => {
     }, [flowers])
 
     return (
-        <FilterContext.Provider value={{ ...state, setGridView }}>
+        <FilterContext.Provider value={{ ...state, setGridView, sorting }}>
             {children}
         </FilterContext.Provider>
     );

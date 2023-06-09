@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
+import Cart from './Cart';
 
 
 function AddToCart({ product }) {
@@ -9,6 +10,9 @@ function AddToCart({ product }) {
 
     return (
         <>
+            <Routes>
+                <Route path="/cart" element={<Cart />} />
+            </Routes>
             <Link to="/cart">
                 <Button>Add To Cart</Button>
             </Link>
