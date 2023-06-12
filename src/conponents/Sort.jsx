@@ -1,40 +1,54 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { FaThList } from 'react-icons/fa'
 import { BsFillGrid3X3GapFill } from 'react-icons/bs'
-
+import Select from 'react-select'
+import { useFilterContext } from './context/filter-context'
 
 function Sort({ value, onChange }) {
+    const { sorting } = useFilterContext()
+
     const handleIconClick = (newValue) => {
         onChange(newValue)
     }
+
+    const options = [
+        { value: null, label: 'Select' },
+        { value: 'a to z', label: 'A to Z' },
+        { value: 'z to a', label: 'Z to A' },
+        { value: 'highest', label: 'Highest' },
+        { value: 'lowest', label: 'Lowest' },
+    ]
+
+    const [selectedOption, setSelectedOption] = useState(null)
+    const handleSelectChange = (selectedOption) => {
+        sorting(selectedOption.value);
+        setSelectedOption(selectedOption);
+        console.log(selectedOption.value);
+    };
 
     return (
         <Wrapper>
             {/* first column */}
             <div>
-                <IconWrapper
-                    active={!value}
-                    onClick={() => handleIconClick(false)}
-                >
+                <IconWrapper active={!value} onClick={() => handleIconClick(false)}>
                     <FaThList />
                 </IconWrapper>
-                <IconWrapper
-                    active={value}
-                    onClick={() => handleIconClick(true)}
-                >
+                <IconWrapper active={value} onClick={() => handleIconClick(true)}>
                     <BsFillGrid3X3GapFill />
                 </IconWrapper>
             </div>
             {/* second column */}
-            <div>
-                <from action="#">
-                    <label htmlFor='sort'></label>
-                    <select name="sort" id="sort"></select>
-                </from>
-            </div>
             <div>right</div>
-
+            <div>
+                <form action="#">
+                    <Select
+                        value={selectedOption}
+                        onChange={handleSelectChange}
+                        options={options}
+                    />
+                </form>
+            </div>
         </Wrapper>
     )
 }

@@ -25,9 +25,19 @@ export const FilterContextProvider = ({ children }) => {
         return dispatch({ type: "SET_GRID_VIEW" })
     };
     // sorting function
-    const sorting = () => {
-        dispatch({ type: "SET_SORT_VALUE" })
-    }
+    const sorting = (selectedValue) => {
+        dispatch({
+            type: "SET_SORT_VALUE",
+            payload: selectedValue
+        });
+    };
+    useEffect(() => {
+        dispatch({
+            type: "SORTING_FLOWERS",
+            payload: flowers
+        })
+    }, [state.sorting_flowers])
+
 
     useEffect(() => {
         dispatch({

@@ -5,33 +5,31 @@ import { Link } from "react-router-dom";
 
 
 function GridView({ product }) {
-    // console.log(product);
     return (<div>
         <div className="container2">
-        {
+            {
                 product.map((curEle, index) => {
-                const { images, id, name, description } = curEle;
+                    const { images, id, name, description } = curEle;
                     return <div className='grid-container' key={index}>
                         <Card sx={{ maxWidth: 345 }} className='grd'>
-
-                        <CardActionArea>
-                            <Link to={`/singleproduct/${id}`}>
-                                <CardMedia component="img" height="250" image={images[0].url}
-                                    alt={name} className='store-image' />
-                            </Link>
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="div">
-                                    {name}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    {description}
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
-                </div>
-            })
-        }
+                            <CardActionArea>
+                                <Link to={`/singleproduct/${id}`}>
+                                    <CardMedia component="img" height="250" image={images[0].url}
+                                        alt={name} className='store-image' />
+                                </Link>
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="div">
+                                        {name}
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary">
+                                        {description}
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                    </div>
+                })
+            }
         </div>
     </div>
     );
