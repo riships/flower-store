@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import '../stylesheets/mulimages.css'
+import styled from 'styled-components';
 
 function MulImages({ imags = [{ "url": '' }] }) {
     // console.log(imags);
@@ -12,9 +13,11 @@ function MulImages({ imags = [{ "url": '' }] }) {
             {
                 imags.map((curElm, index) => {
                     return (
-                        <figure key={index}>
-                            <img src={curElm.url} alt='product-img' className='singl--prdct--img' onClick={() => setMainImge(curElm)} />
-                        </figure>
+                        <ImgMul>
+                            <figure key={index}>
+                                <img src={curElm.url} alt='product-img' className='singl--prdct--img' onClick={() => setMainImge(curElm)} />
+                            </figure>
+                        </ImgMul>
                     )
                 })
             }
@@ -22,6 +25,11 @@ function MulImages({ imags = [{ "url": '' }] }) {
     </>
     )
 };
+const ImgMul = styled.div`
+    height:65px;
+    width:100px;
+    overflow:hidden;
+`
 
 
 export default MulImages

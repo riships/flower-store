@@ -6,7 +6,7 @@ import Select from 'react-select'
 import { useFilterContext } from './context/filter-context'
 
 function Sort({ value, onChange }) {
-    const { sorting } = useFilterContext()
+    const { sorting, filter_flowers } = useFilterContext()
 
     const handleIconClick = (newValue) => {
         onChange(newValue)
@@ -39,7 +39,9 @@ function Sort({ value, onChange }) {
                 </IconWrapper>
             </div>
             {/* second column */}
-            <div>right</div>
+            <div>
+                {`${filter_flowers.length} Available Products`}
+            </div>
             <div>
                 <form action="#">
                     <Select
