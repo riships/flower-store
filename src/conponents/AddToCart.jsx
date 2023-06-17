@@ -7,6 +7,7 @@ const Product = ({ product }) => {
     const handleAddToCart = () => {
         addToCart(product);
     };
+    console.log(product);
 
     return (
         <div>

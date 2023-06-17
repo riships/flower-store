@@ -1,4 +1,6 @@
-import React, { createContext, useReducer, cartReducer, useContext } from "react";
+import React, { createContext, useReducer, useContext } from "react";
+import reducer from "../reducers/cartReducer";
+
 
 const CartContext = createContext();
 
@@ -8,11 +10,14 @@ const initialState = {
 };
 // Create the CartProvider component
 const CartProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(cartReducer, initialState);
+    const [state, dispatch] = useReducer(reducer, initialState);
 
     // Add item to cart
     const addToCart = (product) => {
-        dispatch({ type: 'ADD_TO_CART', payload: product });
+        dispatch({
+            type: 'ADD_TO_CART',
+            payload: product
+        });
     };
 
     return (

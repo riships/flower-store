@@ -15,7 +15,7 @@ function ListView({ product }) {
             product.map((curEle) => {
                 const { images, id, name, description, ratings, price, sub_category } = curEle;
                 {/* console.log("description: ", description); */ }
-                const indexOfFullStop = name.indexOf('(');
+                {/* const indexOfFullStop = name.indexOf('('); */ }
                 {/* console.log("indexOfFullStop: ", indexOfFullStop); */ }
                 return <div className="container" key={id}>
                     <div className="col-xs-12 col-md-6 bootstrap snippets bootdeys" >
@@ -52,7 +52,7 @@ function ListView({ product }) {
                                         <div className="row">
                                             <div className="col-md-6 col-sm-6 col-xs-6">
                                                 <Link to={`/cart`} className='btn btn-success'>
-                                                    <AddToCart />
+                                                    <AddToCart product={product} />
                                                 </Link>
                                             </div>
                                             <div className="col-md-6 col-sm-6 col-xs-6">

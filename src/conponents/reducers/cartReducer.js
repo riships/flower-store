@@ -1,4 +1,3 @@
-// Define the cart reducer function
 const cartReducer = (state, action) => {
     switch (action.type) {
         case 'ADD_TO_CART':
@@ -10,3 +9,4 @@ const cartReducer = (state, action) => {
             return state;
     }
 };
+export default cartReducer;
