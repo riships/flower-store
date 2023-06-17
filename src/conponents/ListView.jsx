@@ -4,14 +4,19 @@ import { Link } from "react-router-dom";
 import StarRating from "./StarRating"
 import '../stylesheets/list-view.css'
 import FormatPrice from '../Helper/FormatPrice';
+import AddToCart from './AddToCart';
 
 
 
 function ListView({ product }) {
+
     return (<div>
         {
             product.map((curEle) => {
                 const { images, id, name, description, ratings, price, sub_category } = curEle;
+                {/* console.log("description: ", description); */ }
+                const indexOfFullStop = name.indexOf('(');
+                {/* console.log("indexOfFullStop: ", indexOfFullStop); */ }
                 return <div className="container" key={id}>
                     <div className="col-xs-12 col-md-6 bootstrap snippets bootdeys" >
                         <div className="product-content product-wrap clearfix">
@@ -19,7 +24,7 @@ function ListView({ product }) {
                                 <div className="col-md-5 col-sm-12 col-xs-12">
                                     <div className="product-image">
                                         <Link to={`/singleproduct/${id}`}>
-                                            <img src={images[0].url} alt={name} className="img-responsive" />
+                                            <img src={images[0].url} alt={name} className="img-responsive img-cust" />
                                         </Link>
                                         <span className="tag2 hot">
                                             Beautiful
@@ -41,13 +46,13 @@ function ListView({ product }) {
                                         <span className="tag1"></span>
                                     </div>
                                     <div className="description">
-                                        <p>{description}</p>
+                                        <p>{description.slice(0, 80)}...</p>
                                     </div>
                                     <div className="product-info smart-form">
                                         <div className="row">
                                             <div className="col-md-6 col-sm-6 col-xs-6">
                                                 <Link to={`/cart`} className='btn btn-success'>
-                                                    Add to cart
+                                                    <AddToCart />
                                                 </Link>
                                             </div>
                                             <div className="col-md-6 col-sm-6 col-xs-6">
@@ -62,7 +67,6 @@ function ListView({ product }) {
                         </div>
                     </div>
                 </div>
-
             })
         }
     </div>

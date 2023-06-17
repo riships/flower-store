@@ -59,20 +59,11 @@ function About() {
                         At {storeData.name}, we believe in giving back to our community.
                         We actively participate in local events, support charitable causes, and collaborate with other businesses to promote the love of flowers and enrich our community.
                     </p>
-                    <h2>Contact Us</h2>
-                    <p>
-                        We would be thrilled to assist you with your floral needs.
-                        Visit our store at {storeData.address}, browse our online catalog, or give us a call at {storeData.phone}.
-                        We look forward to creating stunning floral arrangements that bring joy and beauty into your life.
-                    </p>
                 </Col>
-
             </Row>
         </Container>
     );
 }
-// const StyledImage = styled.img`
-// box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-// `
+
 
 export default About;
