@@ -18,9 +18,7 @@ export const FilterContextProvider = ({ children }) => {
     // console.log(flowers);
     const [state, dispatch] = useReducer(reducer, initialState);
 
-
     // to set grid in view
-
     const setGridView = () => {
         return dispatch({ type: "SET_GRID_VIEW" })
     };
