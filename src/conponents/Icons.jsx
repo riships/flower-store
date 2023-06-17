@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from "styled-components";
-import { TbTruckDelivery, TbReplace, MdLocationPin, BiShieldQuarter } from 'react-icons/all';
+import { TbTruckDelivery, TbReplace } from 'react-icons/tb';
+import { MdLocationPin } from 'react-icons/md';
+import { BiShieldQuarter } from 'react-icons/bi';
+
+
 import { useState } from 'react';
 
 function Icons() {

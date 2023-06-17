@@ -36,7 +36,7 @@ export const FilterContextProvider = ({ children }) => {
             type: "SORTING_FLOWERS",
             payload: flowers
         })
-    }, [state.sorting_flowers])
+    }, [state.sorting_flowers, flowers])
 
 
     useEffect(() => {
