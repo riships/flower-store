@@ -48,6 +48,7 @@ function Sort({ value, onChange }) {
                         value={selectedOption}
                         onChange={handleSelectChange}
                         options={options}
+                        isSearchable={false}
                     />
                 </form>
             </div>

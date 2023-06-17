@@ -22,7 +22,7 @@ function GridView({ product }) {
                                         {name}
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary">
-                                        {description}
+                                        {description.substr(0, 80)}<span>...</span>
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>

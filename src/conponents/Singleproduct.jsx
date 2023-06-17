@@ -17,6 +17,7 @@ function Singleproduct() {
     const { name, price, description, availability, ratings, images, quantity } = singleflowers;
     useEffect(() => {
         getSingleFlower(`${singleApi}/${id}`);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     if (isSingleLoading) {
         return <div>Loading...</div>; // show a loading spinner if data is still loading
