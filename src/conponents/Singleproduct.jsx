@@ -9,7 +9,7 @@ import FormatPrice from '../Helper/FormatPrice'
 import StarRating from "./StarRating"
 import Icons from './Icons';
 import ProductAvailability from './ProductAvailability';
-// import AddToCart from './AddToCart'...;
+import Loader from "./Loader";
 const singleApi = "https://flower-data.onrender.com/flowers"
 function Singleproduct() {
     const { getSingleFlower, singleflowers, isSingleLoading, singleError } = useProductFlowers();
@@ -20,7 +20,7 @@ function Singleproduct() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     if (isSingleLoading) {
-        return <div>Loading...</div>; // show a loading spinner if data is still loading
+        return <Loader /> // show a loading spinner if data is still loading
     }
 
     if (singleError) {

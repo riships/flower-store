@@ -10,7 +10,7 @@ function Contact() {
                     <h3>Quick Contact</h3>
                     <h4>Contact us today, and get reply with in 24 hours!</h4>
                     <fieldset>
-                        <input placeholder="Your name" type="text" tabIndex="1" required autoFocus />
+                        <input placeholder="Your name" type="text" tabIndex="1" required />
                     </fieldset>
                     <fieldset>
                         <input placeholder="Your Email Address" type="email" tabIndex="2" required />
