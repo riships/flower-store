@@ -393,7 +393,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    height: 100vh;
+    height: auto;
     font-family: 'Baloo Paaji 2', cursive;
     padding: 10px;
 }
@@ -432,4 +432,8 @@
 
 .menu-open .menu_box {
     display: flex;
+}
+
+.link--decor {
+    text-decoration: none;
 }

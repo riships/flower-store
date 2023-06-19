@@ -1,9 +1,10 @@
 import React from "react";
 import { useProductFlowers } from '../conponents/context/productcontext'
 import '../stylesheets/product.css';
-import '../stylesheets/loader.css';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Loader from "./Loader";
+import GridView from "./GridView";
+import styled from "styled-components";
 
 
 function FlowerType() {
@@ -15,7 +16,10 @@ function FlowerType() {
     return (
         <section>
             <h1 className="flwr-tp">Featured Flowers -</h1>
-            <div className="flowerTyp">
+            <ProductCard>
+                <GridView product={flowerType} />
+            </ProductCard>
+            {/* <div className="flowerTyp">
                 {flowerType.map((flower, index) => {
                     return (
                         <div key={index} className="product-card">
@@ -35,9 +39,12 @@ function FlowerType() {
                         </div>
                     );
                 })}
-            </div>
+            </div> */}
         </section>
     );
 }
+const ProductCard = styled.div`
+height:100%
+`
 
 export default FlowerType

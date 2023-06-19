@@ -10,22 +10,22 @@ function GridView({ product }) {
                 product.map((curEle, index) => {
                     const { images, id, name, description } = curEle;
                     return <div className='grid-container' key={index}>
-                        <Card sx={{ maxWidth: 345 }} className='grd'>
-                            <CardActionArea>
-                                <Link to={`/singleproduct/${id}`}>
+                        <Link className='link--decor' to={`/singleproduct/${id}`}>
+                            <Card sx={{ maxWidth: 345 }} className='grd'>
+                                <CardActionArea>
                                     <CardMedia component="img" height="250" image={images[0].url}
                                         alt={name} className='store-image' />
-                                </Link>
-                                <CardContent>
-                                    <Typography gutterBottom variant="h5" component="div">
-                                        {name}
-                                    </Typography>
-                                    <Typography variant="body2" color="text.secondary">
-                                        {description.substr(0, 80)}<span>...</span>
-                                    </Typography>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
+                                    <CardContent>
+                                        <Typography style={containerStyle} gutterBottom variant="h5" component="div">
+                                            {name}
+                                        </Typography>
+                                        <Typography variant="body2" color="text.secondary">
+                                            {description.substr(0, 80)}<span>...</span>
+                                        </Typography>
+                                    </CardContent>
+                                </CardActionArea>
+                            </Card>
+                        </Link>
                     </div>
                 })
             }
@@ -33,5 +33,8 @@ function GridView({ product }) {
     </div>
     );
 }
+const containerStyle = {
+    height: '70px'
+};
 
 export default GridView;

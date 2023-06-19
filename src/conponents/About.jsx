@@ -60,15 +60,15 @@ function About() {
         //         </Col>
         //     </Row>
         // </Container>
-        <div class="about-section">
-            <div class="inner-container">
+        <div className="about-section">
+            <div className="inner-container">
                 <h1>About Us</h1>
                 <h1>Welcome to {storeData.name}</h1>
-                <p class="text">
+                <p className="text">
                     At {storeData.name}, we are passionate about bringing the beauty and joy of flowers into your life.
                     We believe that flowers have a unique power to uplift spirits, brighten spaces, and create memorable moments.
                 </p>
-                <div class="skills">
+                <div className="skills">
                     <span>Web Design</span>
                     <span>Photoshop & Illustrator</span>
                     <span>Coding</span>
