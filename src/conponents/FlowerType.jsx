@@ -1,18 +1,20 @@
 import React from "react";
 import { useProductFlowers } from '../conponents/context/productcontext'
 import '../stylesheets/product.css';
+import '../stylesheets/loader.css';
 import { Link } from "react-router-dom";
+import Loader from "./Loader";
 
 
 function FlowerType() {
     const { isLoading, flowerType } = useProductFlowers();
     console.log(flowerType);
     if (isLoading) {
-        return <div>Loading...</div>;
+        return <Loader />
     }
     return (
         <section>
-            <h1 className="flwr-tp">Flower Type</h1>
+            <h1 className="flwr-tp">Featured Flowers -</h1>
             <div className="flowerTyp">
                 {flowerType.map((flower, index) => {
                     return (

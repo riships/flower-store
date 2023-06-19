@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, CardContent, CardMedia, Typography, CardActionArea } from '@mui/material';
-// import '../stylesheets/common.css';
 import { Link } from "react-router-dom";
 
 
