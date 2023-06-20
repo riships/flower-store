@@ -57,13 +57,13 @@ function Sort({ value, onChange }) {
 }
 
 const Wrapper = styled.div`
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 15px 0;
   background-color: #f5f5f561;
-  border-radius: 25px;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.21);
+  ${'' /* border-radius: 25px; */}
+  ${'' /* box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.21); */}
 `
 
 const IconWrapper = styled.div`
