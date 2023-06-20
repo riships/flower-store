@@ -6,14 +6,15 @@
 } */
 .prdct--img--full--view {
     width: 100%;
+    height: 100%;
     position: absolute;
     top: 0px;
 
 }
 
 .RectModal {
-    height: 600px;
-    width: 750px;
+    height: 65%;
+    width: 50%;
     position: relative;
     overflow: hidden;
     margin: 100px auto;
