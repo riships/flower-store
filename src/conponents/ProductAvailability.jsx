@@ -26,9 +26,9 @@ function ProductAvailability({ inStock, instockQuantity, product }) {
                     </div>
                     <div className="second--child--instock">
                         <div className="quantity-select">
-                            <InDe onClick={incrementQuantity}>+</InDe>
-                            <label>Quantity: {quantity}</label>
                             <InDe onClick={decrementQuantity}>-</InDe>
+                            <label>Quantity: {quantity}</label>
+                            <InDe onClick={incrementQuantity}>+</InDe>
                         </div>
                     </div>
                 </InStock>
