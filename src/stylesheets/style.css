@@ -244,6 +244,14 @@
         grid-gap: 0.5rem;
         padding: 10px;
     }
+
+    .RectModal {
+        height: 50%;
+        width: 80%;
+        position: relative;
+        overflow: hidden;
+        margin: 100px auto;
+    }
 }
 
 @media (min-width:768px) and (max-width:991px) {
@@ -306,6 +314,14 @@
         grid-gap: 0.5rem;
         padding: 10px;
     }
+
+    .RectModal {
+        height: 55%;
+        width: 80%;
+        position: relative;
+        overflow: hidden;
+        margin: 100px auto;
+    }
 }
 
 @media (min-width:992px) and (max-width:1199px) {
@@ -363,6 +379,14 @@
         grid-gap: 0.5rem;
         padding: 10px;
     }
+
+    .RectModal {
+        height: 65%;
+        width: 50%;
+        position: relative;
+        overflow: hidden;
+        margin: 100px auto;
+    }
 }
 
 @media (min-width:1200px) {
@@ -414,6 +438,14 @@
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 0.5rem;
         padding: 10px;
+    }
+
+    .RectModal {
+        height: 65%;
+        width: 50%;
+        position: relative;
+        overflow: hidden;
+        margin: 100px auto;
     }
 }
 

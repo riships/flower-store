@@ -12,14 +12,6 @@
 
 }
 
-.RectModal {
-    height: 65%;
-    width: 50%;
-    position: relative;
-    overflow: hidden;
-    margin: 100px auto;
-}
-
 .ReactModal__Overlay--after-open {
     z-index: 2;
 }
