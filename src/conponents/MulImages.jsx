@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import '../stylesheets/mulimages.css'
+import React, { useState } from 'react';
+import '../stylesheets/mulimages.css';
+import '../stylesheets/style.css';
 import styled from 'styled-components';
 
 function MulImages({ imags = [{ "url": '' }] }) {
