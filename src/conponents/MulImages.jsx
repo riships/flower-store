@@ -22,6 +22,7 @@ function MulImages({ imags = [{ "url": '' }] }) {
             stopOnHover={false}
             centerSlidePercentage={50}
             swipeable={true}
+            showThumbs={false}
 
         >
             {
