@@ -51,9 +51,9 @@ function MulImages({ imags = [{ "url": '' }] }) {
     )
 };
 const ImgMul = styled.div`
-    margin-top:15px;
-    margin-bottom:15px;
-    height:130px;
+    margin-top:25px;
+    margin-bottom:40px;
+    height:90px;
     width:130px;
     overflow:hidden;
 `
