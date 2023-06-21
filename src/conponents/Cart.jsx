@@ -1,12 +1,16 @@
-import React from 'react'
-import AddToCart from './AddToCart'
+import React from 'react';
 
-function Cart() {
+const Cart = ({ cartItems }) => {
   return (
     <div>
-      <AddToCart />
+      <h2>Cart</h2>
+      <ul>
+        {cartItems.map((item) => (
+          <li key={item.id}>{item.name}</li>
+        ))}
+      </ul>
     </div>
-  )
-}
+  );
+};
 
-export default Cart
+export default Cart;

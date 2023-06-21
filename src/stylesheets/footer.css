@@ -36,9 +36,14 @@
 .hover-effect1 ul li:hover a {
     border-radius: 50%;
     background: #dc3545;
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
     transform: rotate(360deg);
+}
+
+.link--styl a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.link--styl a:hover {
+    text-decoration: underline;
 }

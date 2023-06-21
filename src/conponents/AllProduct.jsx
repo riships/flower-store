@@ -3,6 +3,7 @@ import { useFilterContext } from './context/filter-context'
 import GridView from './GridView'
 import ListView from './ListView'
 import Sort from './Sort'
+import FilterSection from './FilterSection'
 
 const AllProduct = () => {
     const { filter_flowers, isLoading } = useFilterContext()
@@ -18,6 +19,7 @@ const AllProduct = () => {
 
     return (
         <div>
+            <FilterSection />
             <Sort value={grid_view} onChange={(value) => setGridView(value)} />
             {grid_view ? (
                 <GridView product={filter_flowers} />

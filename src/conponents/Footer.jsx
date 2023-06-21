@@ -1,9 +1,9 @@
 import React from 'react'
-import { IoHome, IoLogoTwitter, IoLogoInstagram, IoLogoYoutube, IoLogoGithub } from 'react-icons/io5';
+import { IoHome, IoLogoTwitter, IoLogoInstagram, IoLogoYoutube } from 'react-icons/io5';
 import { FaEnvelope, FaPrint, FaFacebookF } from 'react-icons/fa';
 import { AiTwotonePhone } from 'react-icons/ai';
 import '../stylesheets/footer.css'
-
+// IoLogoGithub
 
 function Footer() {
     return (
@@ -19,16 +19,16 @@ function Footer() {
                     <div id="link10" className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                         <h6 className="text-uppercase font-weight-bold">Products</h6>
                         <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{ width: '70px' }} />
-                        <p>
+                        <p className='link--styl'>
                             <a href="#!">Travelling</a>
                         </p>
-                        <p>
+                        <p className='link--styl'>
                             <a href="#!">About</a>
                         </p>
-                        <p>
+                        <p className='link--styl'>
                             <a href="#!">BrandFlow</a>
                         </p>
-                        <p>
+                        <p className='link--styl'>
                             <a href="#!">Services</a>
                         </p>
                     </div>
@@ -36,16 +36,16 @@ function Footer() {
                     <div id="link10" className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                         <h6 className="text-uppercase font-weight-bold">Useful links</h6>
                         <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{ width: '70px' }} />
-                        <p>
+                        <p className='link--styl'>
                             <a href="#!">Your Account</a>
                         </p>
-                        <p>
+                        <p className='link--styl'>
                             <a href="#!">Become an Affiliate</a>
                         </p>
-                        <p>
+                        <p className='link--styl'>
                             <a href="#!">Shipping Rates</a>
                         </p>
-                        <p>
+                        <p className='link--styl'>
                             <a href="#!">Help</a>
                         </p>
                     </div>
@@ -54,16 +54,16 @@ function Footer() {
                         <h6 className="text-uppercase font-weight-bold">Contact</h6>
                         <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{ width: '60px' }} />
                         <p>
-                            <IoHome /> Mumbai, Maharashtra
+                            <IoHome /> Noida, Uttar Pradesh
                         </p>
                         <p>
-                            <FaEnvelope /> collab@codewithfaraz.com
+                            <FaEnvelope /> rishi.edunext@gmail.com
                         </p>
                         <p>
-                            <AiTwotonePhone /> + 91 80254 52xxx
+                            <AiTwotonePhone /> + 91 93152 65xxx
                         </p>
                         <p>
-                            <FaPrint /> + 91 80254 55xxx
+                            <FaPrint /> + 91 76692 72xxx
                         </p>
                     </div>
                 </div>
@@ -81,24 +81,24 @@ function Footer() {
             <div className="hover-effect1">
                 <ul style={{ backgroundColor: '#b3b3cc' }} className="list-unstyled list-inline text-center">
                     <li className="list-inline-item">
-                        <a href="https://www.facebook.com/codewithfaraz" title="Facebook"><FaFacebookF /></a>
+                        <a href="https://www.facebook.com/lovelyflowers" title="Facebook"><FaFacebookF /></a>
                     </li>
                     <li className="list-inline-item">
-                        <a href="https://www.twitter.com/codewithfaraz" title="Twitter"><IoLogoTwitter /></a>
+                        <a href="https://www.twitter.com/lovelyflowers" title="Twitter"><IoLogoTwitter /></a>
                     </li>
                     <li className="list-inline-item">
-                        <a href="https://www.instagram.com/codewithfaraz" title="Instagram"><IoLogoInstagram /></a>
+                        <a href="https://www.instagram.com/lovelyflowers" title="Instagram"><IoLogoInstagram /></a>
                     </li>
                     <li className="list-inline-item">
-                        <a href="https://www.youtube.com/@codewithfaraz" title="Youtube"><IoLogoYoutube /></a>
+                        <a href="https://www.youtube.com/@lovelyflowers" title="Youtube"><IoLogoYoutube /></a>
                     </li>
-                    <li className="list-inline-item">
+                    {/* <li className="list-inline-item">
                         <a href="#." title="Github"><IoLogoGithub /></a>
-                    </li>
+                    </li> */}
                 </ul>
             </div>
             <div style={{ backgroundColor: '#b3b3cc' }} className="footer-copyright text-center py-3">
-                Copyright© 2023: Design and Develop by Faraz
+                Copyright© 2023: Design and Develop by °♡✧*ɌїʂᏂꜞ*✧♡°
             </div>
         </footer>
 

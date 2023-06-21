@@ -43,7 +43,33 @@ const filterReducers = (state, action) => {
                 ...state,
                 filter_flowers: newSortData,
             };
+        case "UPDATE_FILTER_VALUES":
+            const { name, value } = action.payload;
 
+            return {
+                ...state,
+                filters: {
+                    ...state.filters,
+                    [name]: value,
+                }
+
+            };
+        case "FILTERED_FLOWERS":
+            let { all_flowers } = state;
+            let tempFilterFlower = [...all_flowers]
+
+            const { text } = state.filters;
+
+            if (text) {
+                tempFilterFlower = tempFilterFlower.filter((curElm) => {
+                    return curElm.name.toLowerCase().includes(text);
+                })
+            }
+
+            return {
+                ...state,
+                filter_flowers: tempFilterFlower,
+            };
         default:
             return state;
     }

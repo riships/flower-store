@@ -10,7 +10,10 @@ const initialState = {
     all_flowers: [],
     grid_view: null,
     sorting_flowers: "lowest",
-}
+    filters: {
+        text: "",
+    },
+};
 
 export const FilterContextProvider = ({ children }) => {
 
@@ -29,12 +32,25 @@ export const FilterContextProvider = ({ children }) => {
             payload: selectedValue
         });
     };
+    // update the filter value
+    const updateFilterValue = (event) => {
+        let name = event.target.name;
+        let value = event.target.value;
+
+        return dispatch({ type: "UPDATE_FILTER_VALUES", payload: { name, value } })
+    };
+
+
+
     useEffect(() => {
+        dispatch({
+            type: "FILTERED_FLOWERS"
+        })
         dispatch({
             type: "SORTING_FLOWERS",
             payload: flowers
         })
-    }, [state.sorting_flowers, flowers])
+    }, [state.sorting_flowers, flowers, state.filters])
 
 
     useEffect(() => {
@@ -45,7 +61,7 @@ export const FilterContextProvider = ({ children }) => {
     }, [flowers])
 
     return (
-        <FilterContext.Provider value={{ ...state, setGridView, sorting }}>
+        <FilterContext.Provider value={{ ...state, setGridView, sorting, updateFilterValue }}>
             {children}
         </FilterContext.Provider>
     );

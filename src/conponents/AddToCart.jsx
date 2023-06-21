@@ -1,14 +1,12 @@
 import React from 'react';
 import { useCartContext } from './context/cart-context';
 
-const Product = ({ product }) => {
+const Product = ({ product, item }) => {
     const { addToCart } = useCartContext();
 
     const handleAddToCart = () => {
         addToCart(product);
     };
-    console.log(product);
-
     return (
         <div>
             <button onClick={handleAddToCart}>Add to Cart</button>
