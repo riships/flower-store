@@ -3,6 +3,7 @@ import WelcomeSection from './WelcomeSection'
 import FlowerType from './FlowerType'
 import About from './About'
 import Contact from './Contact'
+import Footer from './Footer'
 
 function Home() {
     return (
@@ -11,6 +12,7 @@ function Home() {
             <FlowerType />
             <About />
             <Contact />
+            <Footer />
         </>
     )
 }
