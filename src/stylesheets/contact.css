@@ -35,6 +35,10 @@
     color: #ced4da;
 }
 
+.errorMsgText {
+    color: #ced4da;
+}
+
 fieldset {
     border: medium none !important;
     margin: 0 0 10px;

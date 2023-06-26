@@ -52,7 +52,7 @@ function Contact() {
                                 tabIndex="1"
                                 required
                             />
-                            <ErrorMessage name="name" component="div" />
+                            <ErrorMessage className='errorMsgText' name="name" component="div" />
                         </fieldset>
                         <fieldset>
                             <Field
@@ -63,7 +63,7 @@ function Contact() {
                                 tabIndex="2"
                                 required
                             />
-                            <ErrorMessage name="email" component="div" />
+                            <ErrorMessage className='errorMsgText' name="email" component="div" />
                         </fieldset>
                         <fieldset>
                             <Field
@@ -74,7 +74,7 @@ function Contact() {
                                 tabIndex="3"
                                 required
                             />
-                            <ErrorMessage name="phone" component="div" />
+                            <ErrorMessage className='errorMsgText' name="phone" component="div" />
                         </fieldset>
                         <fieldset>
                             <Field
@@ -85,7 +85,7 @@ function Contact() {
                                 tabIndex="4"
                                 required
                             />
-                            <ErrorMessage name="website" component="div" />
+                            <ErrorMessage className='errorMsgText' name="website" component="div" />
                         </fieldset>
                         <fieldset>
                             <Field
@@ -96,7 +96,7 @@ function Contact() {
                                 name="message"
                                 required
                             />
-                            <ErrorMessage name="message" component="div" />
+                            <ErrorMessage className='errorMsgText' name="message" component="div" />
                         </fieldset>
                         <fieldset>
                             <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">
