@@ -1,9 +1,8 @@
 import React from 'react';
 import { useCartContext } from './context/cart-context';
 
-const Product = ({ product, item }) => {
+const AddToCart = ({ product }) => {
     const { addToCart } = useCartContext();
-
     const handleAddToCart = () => {
         addToCart(product);
     };
@@ -13,4 +12,4 @@ const Product = ({ product, item }) => {
         </div>
     );
 };
-export default Product;
+export default AddToCart;
