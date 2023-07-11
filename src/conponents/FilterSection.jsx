@@ -4,7 +4,23 @@ import { useFilterContext } from './context/filter-context'
 import '../stylesheets/filterSection.css'
 
 function FilterSection() {
-    const { updateFilterValue, filters: { text }, } = useFilterContext();
+    const {
+        updateFilterValue,
+        all_flowers,
+        filters: { text },
+    } = useFilterContext();
+
+
+    // TO GET THE UNIQUE DATA OF EACH FIELD
+    const getUniqueData = (data, property) => {
+        let new 
+
+    }
+
+
+    //WE NEED UNIQUE DATA
+    const categoryOnlyData = getUniqueData(all_flowers, "sub_category");
+
     return (
         <Wraper>
             <div className='filter--search'>

@@ -4,7 +4,7 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { AppProvider } from './conponents/context/productcontext';
 import { FilterContextProvider } from './conponents/context/filter-context';
-import { CartProvider } from './conponents/context/cart-context';
+import { CartProvider } from './conponents/reducers/cartReducer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
