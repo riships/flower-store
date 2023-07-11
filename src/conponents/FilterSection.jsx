@@ -12,10 +12,13 @@ function FilterSection() {
 
 
     // TO GET THE UNIQUE DATA OF EACH FIELD
-    // const getUniqueData = (data, property) => {
-    //     let new 
+    const getUniqueData = (data, property) => {
+        let newVal = data.map((curEle) => {
+            return curEle[property];
+        })
+        console.log(newVal);
 
-    // }
+    }
 
 
     //WE NEED UNIQUE DATA
