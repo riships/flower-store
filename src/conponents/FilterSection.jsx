@@ -16,6 +16,7 @@ function FilterSection() {
         let newVal = data.map((curEle) => {
             return curEle[property];
         })
+        newVal = ["All", ...new Set(newVal)];
         console.log(newVal);
 
     }
@@ -23,7 +24,7 @@ function FilterSection() {
 
     //WE NEED UNIQUE DATA
     const categoryOnlyData = getUniqueData(all_flowers, "sub_category");
-
+    console.log(categoryOnlyData)
     return (
         <Wraper>
             <div className='filter--search'>
