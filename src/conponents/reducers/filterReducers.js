@@ -58,11 +58,16 @@ const filterReducers = (state, action) => {
             let { all_flowers } = state;
             let tempFilterFlower = [...all_flowers]
 
-            const { text } = state.filters;
+            const { text, category } = state.filters;
 
             if (text) {
                 tempFilterFlower = tempFilterFlower.filter((curElm) => {
                     return curElm.name.toLowerCase().includes(text);
+                })
+            }
+            if (category) {
+                tempFilterFlower = tempFilterFlower.filter((curElm) => {
+                    return curElm.sub_category === category;
                 })
             }
 

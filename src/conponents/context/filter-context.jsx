@@ -12,6 +12,8 @@ const initialState = {
     sorting_flowers: "lowest",
     filters: {
         text: "",
+        category: "all",
+        company: "all"
     },
 };
 
