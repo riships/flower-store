@@ -7,7 +7,7 @@ function FilterSection() {
     const {
         updateFilterValue,
         all_flowers,
-        filters: { text, category },
+        filters: { text, category, ALL },
     } = useFilterContext();
 
 
@@ -20,6 +20,7 @@ function FilterSection() {
         console.log(newVal);
         return newVal;
     }
+    console.log(ALL, "all-data");
 
 
     //WE NEED UNIQUE DATA
@@ -34,32 +35,32 @@ function FilterSection() {
                         type="text"
                         name="text"
                         value={text}
-                        onClick={updateFilterValue}
+                        onChange={updateFilterValue}
                         placeholder='SEARCH'
                     />
                 </form>
             </div>
+            <FilterCategory>
+                <h3>Filter By Category</h3>
+
+                {
+                    categoryOnlyData.map((curElem, index) => {
+                        return <FilterDiv>
+                            <FilterButton key={index}
+                                className={curElem === category ? "button active" : "button"}
+                                type='button'
+                                name='category'
+                                value={curElem}
+                                onClick={updateFilterValue}
+                            >
+                                {curElem}
+                            </FilterButton>
+                        </FilterDiv>
+                    })
+                }
+            </FilterCategory>
         </Wraper>
-        <FilterCategory>
 
-            {
-                categoryOnlyData.map((curElem, index) => {
-                    return <FilterButton>
-                        <button key={index}
-                            className={curElem === category ? "button active" : "button"}
-                            type='button'
-                            name='category'
-                            value={curElem}
-                            onClick={updateFilterValue}
-                        >
-                            {curElem}
-                        </button>
-                    </FilterButton>
-                })
-            }
-
-
-        </FilterCategory>
     </>
 
     )
@@ -67,31 +68,31 @@ function FilterSection() {
 const Wraper = styled.section`
 height:auto;
 `
-const FilterButton = styled.button`
-  padding: 10px 0 25px;
+const FilterDiv = styled.div`
+  padding: 5px 10px;
+  width:80%;
+  `
 
-.button {
-  transition: all .2s ease-in-out;
-  border-radius: 100px;
-  background: none;
-  font-weight: 700;
-  font-size: 18px;
-  cursor: pointer;
-  padding: 0px;
-  outline: none;
-  opacity: 0.4;
-  border: none;
-  color: none;
-}
+const FilterButton = styled.button`
+    transition: all.2s ease-in-out;
+    background: none;
+    font-weight: 700;
+    font-size: 12px;
+    cursor: pointer;
+    outline: none;
+    opacity: 0.4;
+    border: none;
+    color: #fff00;
 
 .button:hover,
 .button.active {
-  opacity: 1;
-}`
+    opacity: 1;
+} `
 const FilterCategory = styled.div`
     display: flex;
-    flex-direction:column;
-    width:15%;
- `
-
+    flex-direction: column;
+    width: 15%;
+    float: left;
+    margin-left: 8rem;
+`
 export default FilterSection

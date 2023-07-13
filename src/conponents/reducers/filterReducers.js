@@ -58,7 +58,7 @@ const filterReducers = (state, action) => {
             let { all_flowers } = state;
             let tempFilterFlower = [...all_flowers]
 
-            const { text, category } = state.filters;
+            const { text, category, ALL } = state.filters;
 
             if (text) {
                 tempFilterFlower = tempFilterFlower.filter((curElm) => {
@@ -69,6 +69,9 @@ const filterReducers = (state, action) => {
                 tempFilterFlower = tempFilterFlower.filter((curElm) => {
                     return curElm.sub_category === category;
                 })
+            }
+            if (ALL) {
+                tempFilterFlower = ALL === "All" ? all_flowers : tempFilterFlower;
             }
 
             return {
