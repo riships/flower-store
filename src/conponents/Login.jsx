@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 const Login = () => {
     const [user_name, setUsername] = useState('');
     const [user_password, setPassword] = useState('');
+    const history = useHistory();
 
     const handleLogin = () => {
         axios
             .post('http://localhost:4000/login', { user_name, user_password })
             .then((response) => {
                 console.log(response.data.message);
+                history.push('/home');
             })
             .catch((error) => {
                 console.error('Login error:', error);
