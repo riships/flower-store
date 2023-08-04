@@ -11,6 +11,7 @@ import styled from 'styled-components';
 import Errorpage from "../src/conponents/Errorpage";
 import Cart from "../src/conponents/Cart";
 import AllProduct from "./conponents/AllProduct";
+import Login from "./conponents/Login";
 
 const Wrapper = styled.section`
     height:70px;
@@ -38,6 +39,10 @@ function App() {
     {
       text: "Store",
       link: "/allproduct"
+    },
+    {
+      text: "Login",
+      link: "/login"
     }
   ];
   return (
@@ -67,7 +72,9 @@ function App() {
         <Route path='/allproduct' element={<AllProduct />} />
         <Route path="/singleproduct/:id" element={<Singleproduct />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<Errorpage />} />
+
       </Routes>
     </BrowserRouter>
   );
