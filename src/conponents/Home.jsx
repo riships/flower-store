@@ -12,7 +12,6 @@ function Home() {
             <FlowerType />
             <About />
             <Contact />
-            <Footer />
         </>
     )
 }

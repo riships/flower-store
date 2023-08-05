@@ -4,7 +4,6 @@ import GridView from './GridView'
 import ListView from './ListView'
 import Sort from './Sort'
 import FilterSection from './FilterSection'
-import Footer from './Footer'
 
 const AllProduct = () => {
     const { filter_flowers, isLoading } = useFilterContext()
@@ -27,7 +26,6 @@ const AllProduct = () => {
             ) : (
                 <ListView product={filter_flowers} />
             )}
-            <Footer />
         </div>
     )
 }

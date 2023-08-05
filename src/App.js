@@ -12,6 +12,7 @@ import Errorpage from "../src/conponents/Errorpage";
 import Cart from "../src/conponents/Cart";
 import AllProduct from "./conponents/AllProduct";
 import Login from "./conponents/Login";
+import Footer from "./conponents/Footer";
 
 const Wrapper = styled.section`
     height:70px;
@@ -74,8 +75,8 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<Errorpage />} />
-
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 

@@ -1,6 +1,5 @@
 import React from 'react'
 import '../stylesheets/about.css';
-import Footer from './Footer';
 
 
 function About() {
@@ -76,8 +75,7 @@ function About() {
                     <span>Coding</span>
                 </div>
             </div>
-        </div>
-            <Footer />
+            </div>
         </>
     );
 }
