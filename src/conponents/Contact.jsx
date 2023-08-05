@@ -3,6 +3,7 @@ import '../stylesheets/contact.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
+import Footer from './Footer';
 
 function Contact() {
     const validationSchema = Yup.object().shape({
@@ -106,6 +107,7 @@ function Contact() {
                     </Form>
                 </Formik>
             </div>
+            <Footer />
         </div>
     );
 }

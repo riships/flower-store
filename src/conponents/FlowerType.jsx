@@ -5,6 +5,7 @@ import '../stylesheets/product.css';
 import Loader from "./Loader";
 import GridView from "./GridView";
 import styled from "styled-components";
+import Footer from "./Footer";
 
 
 function FlowerType() {
@@ -40,6 +41,7 @@ function FlowerType() {
                     );
                 })}
             </div> */}
+            <Footer />
         </section>
     );
 }

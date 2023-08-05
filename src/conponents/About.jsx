@@ -1,5 +1,6 @@
 import React from 'react'
 import '../stylesheets/about.css';
+import Footer from './Footer';
 
 
 function About() {
@@ -60,7 +61,8 @@ function About() {
         //         </Col>
         //     </Row>
         // </Container>
-        <div className="about-section">
+        <>
+            <div className="about-section">
             <div className="inner-container">
                 <h1>About Us</h1>
                 <h1>Welcome to {storeData.name}</h1>
@@ -75,6 +77,8 @@ function About() {
                 </div>
             </div>
         </div>
+            <Footer />
+        </>
     );
 }
 

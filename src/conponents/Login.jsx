@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Footer from './Footer';
 
 const Login = () => {
     const [user_name, setUsername] = useState('');
@@ -28,7 +29,8 @@ const Login = () => {
     }, [loggedIn]);
 
     return (
-        <div>
+        <>
+            <div>
             <h2>Login</h2>
             <input
                 type="text"
@@ -44,6 +46,9 @@ const Login = () => {
             />
             <button onClick={handleLogin}>Login</button>
         </div>
+            <Footer />
+        </>
+
     );
 };
 
