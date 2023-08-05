@@ -1,23 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
 
 const Login = () => {
     const [user_name, setUsername] = useState('');
     const [user_password, setPassword] = useState('');
-    const history = useHistory();
+    const [loggedIn, setLoggedIn] = useState(false);
 
     const handleLogin = () => {
         axios
             .post('http://localhost:4000/login', { user_name, user_password })
             .then((response) => {
                 console.log(response.data.message);
-                history.push('/home');
+                setLoggedIn(true);
+
             })
             .catch((error) => {
                 console.error('Login error:', error);
             });
     };
+    // useEffect to handle redirection
+    useEffect(() => {
+        if (loggedIn) {
+            // Redirect to the home page after successful login
+            window.location.href = '/';
+            console.log('success');
+        }
+    }, [loggedIn]);
 
     return (
         <div>
