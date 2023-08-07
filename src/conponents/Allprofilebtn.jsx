@@ -32,7 +32,7 @@ function Allprofilebtn() {
             </div>
             <Login
                 isOpen={isModalOpen}
-                onRequestClose={() => setIsModalOpen(true)}
+                onRequestClose={() => setIsModalOpen(false)}
                 onLogin={handleLoginSubmit}
             />
             <div className="list-inline-item">
