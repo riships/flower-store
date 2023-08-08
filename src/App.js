@@ -12,7 +12,7 @@ import Errorpage from "../src/conponents/Errorpage";
 import Cart from "../src/conponents/Cart";
 import AllProduct from "./conponents/AllProduct";
 import Footer from "./conponents/Footer";
-// import Login from "./conponents/Login";
+import Login from "./conponents/Login";
 import Allprofilebtn from "./conponents/Allprofilebtn";
 
 const Wrapper = styled.section`
@@ -22,9 +22,15 @@ const Wrapper = styled.section`
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  const handleLoginSubmit = () => {
+    // Your login form submit logic goes here
+    setIsModalOpen(true);
+  };
+
   const menuItems = [
     {
       text: "Home",
@@ -42,10 +48,6 @@ function App() {
       text: "Store",
       link: "/allproduct"
     },
-    {
-      text: "Login",
-      link: "/allprofilebtn"
-    }
   ];
   return (
     <BrowserRouter>
@@ -60,11 +62,20 @@ function App() {
               <Link onClick={toggleMenu} to={menuItem.link}>{menuItem.text}</Link>
             </div>
           ))}
+          <div className="mnu_link">
+            <Login
+              isOpen={isModalOpen}
+              onRequestClose={() => setIsModalOpen(false)}
+              onLogin={handleLoginSubmit}
+              onClose={() => setIsModalOpen(!isModalOpen)}
+            />
+          </div>
           <div className="mnu_link cart-trolley--link">
             <Link to="/cart"><BsFillCartFill className="cart-trolley" />
               <span className="cart-total--item">10</span>
             </Link>
           </div>
+
         </div>
       </Wrapper>
       <Routes>

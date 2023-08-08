@@ -3,7 +3,7 @@ import Login from './Login';
 
 function Allprofilebtn() {
     // Simulating a login state (you should use your own logic to check if the user is logged in)
-    const [isLoggedIn, setIsLoggedIn] = useState(true);// Set this to true if the user is logged in
+    const [isLoggedIn, setIsLoggedIn] = useState(true); // Set this to true if the user is logged in
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     // Function to handle the login action
@@ -27,19 +27,20 @@ function Allprofilebtn() {
         <div className="list-unstyled list-inline text-center py-2">
             <div className="list-inline-item">
                 <button onClick={handleLogin} className="btn btn-outline-danger btn-rounded" style={{ display: isLoggedIn ? 'none' : 'block' }}>
-                    Login
+                    Signup
+                </button>
+            </div>
+            <div className="list-inline-item">
+                <button onClick={handleLogout} className="btn btn-outline-danger btn-rounded" style={{ display: isLoggedIn ? 'block' : 'none' }}>
+                    Profile
                 </button>
             </div>
             <Login
                 isOpen={isModalOpen}
                 onRequestClose={() => setIsModalOpen(false)}
                 onLogin={handleLoginSubmit}
+                onClose={() => setIsModalOpen(!isModalOpen)}
             />
-            <div className="list-inline-item">
-                <button onClick={handleLogout} className="btn btn-outline-danger btn-rounded" style={{ display: isLoggedIn ? 'block' : 'none' }}>
-                    Profile
-                </button>
-            </div>
         </div>
     );
 }

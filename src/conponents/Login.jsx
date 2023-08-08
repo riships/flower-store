@@ -1,9 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Container, Form, Button } from 'react-bootstrap';
+import { Form, Button, Card } from 'react-bootstrap';
 import Modal from 'react-modal';
+import { RxCross1 } from 'react-icons/rx';
+import { Link } from 'react-router-dom';
 
-const Login = ({ isOpen, onRequestClose, onLogin }) => {
+
+const customStyles = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+    },
+};
+
+const Login = ({ isOpen, onRequestClose, onLogin, onClose }) => {
     const [user_name, setUsername] = useState('');
     const [user_password, setPassword] = useState('');
     const [loggedIn, setLoggedIn] = useState(false);
@@ -30,40 +44,77 @@ const Login = ({ isOpen, onRequestClose, onLogin }) => {
     }, [loggedIn]);
 
     return (
-        <Container>
-            <Modal isOpen={isOpen} onRequestClose={onRequestClose}>
-                <h2>Login</h2>
-                <Form>
-                    <Form.Group>
-                        <Form.Control
-                            type="text"
-                            placeholder="Username"
-                            value={user_name}
-                            onChange={(e) => setUsername(e.target.value)}
-                        />
-                    </Form.Group>
+        <>
+            <Modal
+                style={customStyles}
+                isOpen={isOpen}
+                onRequestClose={onRequestClose}>
+                <RxCross1
+                    onClick={onClose}
+                />
+                <Card.Body>
+                    <div className="mb-3 mt-md-4">
+                        <div className="mb-3">
+                            <Form>
+                                <Form.Group className="mb-3" controlId="formBasicEmail">
+                                    <Form.Label className="text-center">
+                                        Username
+                                    </Form.Label>
+                                    <Form.Control
+                                        type="text"
+                                        placeholder="Username"
+                                        value={user_name}
+                                        onChange={(e) => setUsername(e.target.value)} />
+                                </Form.Group>
 
-                    <Form.Group>
-                        <Form.Control
-                            type="password"
-                            placeholder="Password"
-                            value={user_password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                    </Form.Group>
-
-                    <Button variant="primary"
-                        onClick={handleLogin}>
-                        Login
-                    </Button>
-                </Form>
-
+                                <Form.Group
+                                    className="mb-3"
+                                    controlId="formBasicPassword"
+                                >
+                                    <Form.Label>Password</Form.Label>
+                                    <Form.Control
+                                        type="password"
+                                        placeholder="Password"
+                                        value={user_password}
+                                        onChange={(e) => setPassword(e.target.value)} />
+                                </Form.Group>
+                                <Form.Group
+                                    className="mb-3"
+                                    controlId="formBasicCheckbox"
+                                >
+                                    <p className="small">
+                                        <a className="text-primary" href="#!">
+                                            Forgot password?
+                                        </a>
+                                    </p>
+                                </Form.Group>
+                                <div className="d-grid">
+                                    <Button variant="primary" type="submit"
+                                        onClick={handleLogin}
+                                    >
+                                        Login
+                                    </Button>
+                                </div>
+                            </Form>
+                            <div className="mt-3">
+                                <p className="mb-0  text-center">
+                                    Don't have an account?{" "}
+                                    <a href="{''}" className="text-primary fw-bold">
+                                        Sign Up
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </Card.Body>
             </Modal>
-            <Button variant="primary"
-                onClick={onLogin}>
-                Login
-            </Button>
-        </Container>
+            <div className="mnu_link cart-trolley--link">
+                <Link
+                    onClick={onLogin}>
+                    Login
+                </Link>
+            </div>
+        </>
 
     );
 };
