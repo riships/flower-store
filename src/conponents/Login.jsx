@@ -4,6 +4,7 @@ import { Form, Button, Card } from 'react-bootstrap';
 import Modal from 'react-modal';
 import { RxCross1 } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
+import Signup from './Signup';
 
 
 const customStyles = {
@@ -99,9 +100,9 @@ const Login = ({ isOpen, onRequestClose, onLogin, onClose }) => {
                             <div className="mt-3">
                                 <p className="mb-0  text-center">
                                     Don't have an account?{" "}
-                                    <a href="{''}" className="text-primary fw-bold">
+                                    <Link to={<Signup />} className="text-primary fw-bold">
                                         Sign Up
-                                    </a>
+                                    </Link>
                                 </p>
                             </div>
                         </div>
