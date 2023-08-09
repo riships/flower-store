@@ -100,7 +100,7 @@ const Login = ({ isOpen, onRequestClose, onLogin, onClose }) => {
                             <div className="mt-3">
                                 <p className="mb-0  text-center">
                                     Don't have an account?{" "}
-                                    <Link to={<Signup />} className="text-primary fw-bold">
+                                    <Link to="/signup" className="text-primary fw-bold">
                                         Sign Up
                                     </Link>
                                 </p>
