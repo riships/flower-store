@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Login from './Login';
+import Signup from './Signup';
 
 function Allprofilebtn() {
     // Simulating a login state (you should use your own logic to check if the user is logged in)
@@ -25,11 +26,12 @@ function Allprofilebtn() {
 
     return (
         <div className="list-unstyled list-inline text-center py-2">
-            <div className="list-inline-item">
-                <button onClick={handleLogin} className="btn btn-outline-danger btn-rounded" style={{ display: isLoggedIn ? 'none' : 'block' }}>
-                    Signup
-                </button>
-            </div>
+            <Signup
+                onClick={handleLogin}
+                isLoggedIn={isLoggedIn}
+                onLogoutClick={handleLogout}
+                showLoginForm
+            />
             <div className="list-inline-item">
                 <button onClick={handleLogout} className="btn btn-outline-danger btn-rounded" style={{ display: isLoggedIn ? 'block' : 'none' }}>
                     Profile
