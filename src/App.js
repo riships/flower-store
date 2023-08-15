@@ -14,7 +14,7 @@ import AllProduct from "./conponents/AllProduct";
 import Footer from "./conponents/Footer";
 import Login from "./conponents/Login";
 import Allprofilebtn from "./conponents/Allprofilebtn";
-// import Signup from "./conponents/Signup"; 
+import Signup from "./conponents/Signup"; 
 
 const Wrapper = styled.section`
     height:70px;
@@ -87,6 +87,7 @@ function App() {
         <Route path="/singleproduct/:id" element={<Singleproduct />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/allprofilebtn" element={<Allprofilebtn />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="*" element={<Errorpage />} />
       </Routes>
       <Footer />

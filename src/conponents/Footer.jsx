@@ -3,6 +3,7 @@ import { IoHome, IoLogoTwitter, IoLogoInstagram, IoLogoYoutube } from 'react-ico
 import { FaEnvelope, FaPrint, FaFacebookF } from 'react-icons/fa';
 import { AiTwotonePhone } from 'react-icons/ai';
 import '../stylesheets/footer.css'
+import { Link } from 'react-router-dom';
 // IoLogoGithub
 
 function Footer() {
@@ -23,7 +24,7 @@ function Footer() {
                             <a href="#!">Travelling</a>
                         </p>
                         <p className='link--styl'>
-                            <a href="#!">About</a>
+                            <Link to="/about">About</Link>
                         </p>
                         <p className='link--styl'>
                             <a href="#!">BrandFlow</a>
@@ -74,7 +75,9 @@ function Footer() {
                     <h5 className="mb-1">Register for free</h5>
                 </li>
                 <li className="list-inline-item">
-                    <a href="#Contact" className="btn btn-outline-danger btn-rounded">Sign up!</a>
+                    <Link to="/signup" className="btn btn-outline-danger btn-rounded">
+                        Sign up!
+                    </Link>                    
                 </li>
             </ul>
             <hr />
