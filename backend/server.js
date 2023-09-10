@@ -39,7 +39,7 @@ app.post('/login', (req, res) => {
 app.post('/signup', (req, res) => {
     const { user_name, user_password } = req.body;
     pool.query(
-        'INSERT INTO users (user_name, user_password) VALUES (?, ?)',
+        'INSERT INTO users (user_name, email_id, user_password) VALUES (?, ?, ?)',
         [user_name, user_password],
         (error, results) => {
             if (error) throw error;
