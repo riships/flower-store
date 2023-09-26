@@ -6,6 +6,7 @@ const mysql = require('mysql');
 const app = express();
 const port = 4000;
 
+// Enable CORS for all routes
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -37,13 +38,16 @@ app.post('/login', (req, res) => {
 
 // Signup endpoint
 app.post('/signup', (req, res) => {
-    const { user_name, user_password } = req.body;
+    const { user_name, user_password, email_id } = req.body;
     pool.query(
         'INSERT INTO users (user_name, email_id, user_password) VALUES (?, ?, ?)',
-        [user_name, user_password],
+        [user_name, user_password, email_id],
         (error, results) => {
-            if (error) throw error;
-            res.json({ message: 'Signup successful' });
+            if (results.length === 1) {
+                res.json({ message: 'Signup successful' });
+            } else {
+                res.status(401).json({ message: 'Enter valid Details' });
+            }
         }
     );
 });

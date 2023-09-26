@@ -24,6 +24,7 @@ function SignupPage() {
         // For example:
         fetch('http://localhost:4000/signup', {
             method: 'POST',
+
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -32,6 +33,7 @@ function SignupPage() {
             .then((response) => response.json())
             .then((data) => {
                 // Handle the response from the server (e.g., success or error messages)
+                console.log(data);
             })
 
             .catch((error) => {
@@ -79,7 +81,7 @@ function SignupPage() {
                     />
                 </div>
 
-                <button type="submit">Sign Up</button>
+                <button onClick={handleSubmit} type="submit">Sign Up</button>
             </form>
         </div>
     );
