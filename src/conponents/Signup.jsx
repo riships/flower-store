@@ -12,6 +12,7 @@ function SignupPage() {
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
+        console.log(...formData); 
     };
 
     // Handle form submission
@@ -80,7 +81,6 @@ function SignupPage() {
                         required
                     />
                 </div>
-
                 <button onClick={handleSubmit} type="submit">Sign Up</button>
             </form>
         </div>

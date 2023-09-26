@@ -129,8 +129,7 @@ const Login = ({ isOpen, onRequestClose, onLogin, onClose }) => {
                                     Already have an account?{' '}
                                     <span
                                         className="text-primary fw-bold cursor-pointer"
-                                        onClick={() => setLoginMode(true)}
-                                    >
+                                            onClick={() => setLoginMode(true)}                                    >
                                         Log In
                                     </span>
                                 </>
