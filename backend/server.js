@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mysql = require('mysql');
+const nodemailer = require('nodemailer');
 
 const app = express();
 const port = 4000;
@@ -51,6 +52,14 @@ app.post('/signup', (req, res) => {
         }
     );
 });
+app.post('/send-email', (req, res) => {
+    const { recipientEmail, subject, message } = req.body;
+
+    // Your Nodemailer code here to send the email
+
+    res.json({ message: 'Email sent successfully' });
+});
+
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);

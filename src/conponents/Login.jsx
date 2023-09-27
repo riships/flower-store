@@ -27,6 +27,10 @@ const Login = ({ isOpen, onRequestClose, onLogin, onClose }) => {
 
 
     const handleLogin = () => {
+        if (!user_name || !user_password) {
+            console.error('Username and password are required');
+            return; // Don't proceed with the login request
+        }
         axios
             .post('http://localhost:4000/login', { user_name, user_password })
             .then((response) => {
@@ -68,7 +72,8 @@ const Login = ({ isOpen, onRequestClose, onLogin, onClose }) => {
                                             type="text"
                                             placeholder="Username"
                                             value={user_name}
-                                            onChange={(e) => setUsername(e.target.value)} />
+                                            onChange={(e) => setUsername(e.target.value)}
+                                            required />
                                     </Form.Group>
 
                                     <Form.Group
@@ -80,7 +85,8 @@ const Login = ({ isOpen, onRequestClose, onLogin, onClose }) => {
                                             type="password"
                                             placeholder="Password"
                                             value={user_password}
-                                            onChange={(e) => setPassword(e.target.value)} />
+                                            onChange={(e) => setPassword(e.target.value)}
+                                            required />
                                     </Form.Group>
                                     <Form.Group
                                         className="mb-3"
