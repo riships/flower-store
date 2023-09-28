@@ -66,7 +66,7 @@ app.post('/send-email', (req, res) => {
         from: recipientEmail, // sender's email address
         to: 'avviare.rishi@gmail.com', // recipient's email address
         subject: recipientName, // email subject
-        text: message, recipientMobile, // plain text body
+        text: message, // plain text body
         // You can also use `html` to send HTML content.
         // html: '<h1>Hello from Node.js</h1><p>This is a test email.</p>',
     };
