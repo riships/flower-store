@@ -65,13 +65,13 @@ const filterReducers = (state, action) => {
                     return curElm.name.toLowerCase().includes(text);
                 })
             }
-            if (category) {
+            if (category != 'all') {
                 tempFilterFlower = tempFilterFlower.filter((curElm) => {
                     return curElm.sub_category === category;
                 })
             }
             if (ALL) {
-                tempFilterFlower = ALL === "All" ? all_flowers : tempFilterFlower;
+                tempFilterFlower = ALL === "all" ? all_flowers : tempFilterFlower;
             }
 
             return {
