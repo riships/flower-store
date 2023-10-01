@@ -7,7 +7,7 @@ import PageNavigation from './PageNavigation';
 import MulImages from './MulImages';
 import FormatPrice from '../Helper/FormatPrice'
 import StarRating from "./StarRating"
-import AddToCart from "./AddToCart"
+// import AddToCart from "./AddToCart"
 import Icons from './Icons';
 import ProductAvailability from './ProductAvailability';
 import Loader from "./Loader";
@@ -62,9 +62,9 @@ function Singleproduct() {
                                         </div>
                                         <p className="about">{description}</p>
                                         <Icons />
-                                        <AddToCart
+                                        {/* <AddToCart
                                             product={singleflowers}
-                                        />
+                                        /> */}
                                     </div>
                                 </div>
                             </div>

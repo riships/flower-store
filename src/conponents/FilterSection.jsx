@@ -7,7 +7,7 @@ function FilterSection() {
     const {
         updateFilterValue,
         all_flowers,
-        filters: { text, category, ALL },
+        filters: { text, category },
     } = useFilterContext();
 
 
