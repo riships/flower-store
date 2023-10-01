@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mysql = require('mysql');
 const nodemailer = require('nodemailer');
+const twilio = require('twilio');
 
 const app = express();
 const port = 4000;
@@ -53,7 +54,7 @@ app.post('/signup', (req, res) => {
     );
 });
 app.post('/send-email', (req, res) => {
-    const { recipientName, recipientEmail, message, } = req.body;
+    const { name, email, message, phone, website } = req.body;
     const transporter = nodemailer.createTransport({
         service: 'gmail', // e.g., 'Gmail', 'Yahoo', 'Outlook', etc.
         auth: {
@@ -63,12 +64,11 @@ app.post('/send-email', (req, res) => {
     });
     // Define the email data
     const mailOptions = {
-        from: recipientEmail, // sender's email address
+        from: email, // sender's email address
         to: 'avviare.rishi@gmail.com', // recipient's email address
-        subject: recipientName, // email subject
-        text: message, // plain text body
-        // You can also use `html` to send HTML content.
-        // html: '<h1>Hello from Node.js</h1><p>This is a test email.</p>',
+        subject: 'Mail From My React Flower Store', // email subject
+        html: `<p>Hello ${name},<br>${message}</p><p>My Conact No.: ${phone}<br>Website: ${website}</p>`, // plain text body
+
     };
 
     // Your Nodemailer code here to send the email
@@ -82,7 +82,21 @@ app.post('/send-email', (req, res) => {
 
     res.json({ message: 'Email sent successfully' });
 });
+// Your Twilio credentials
+// const accountSid = 'AC0a6475745c5a561325c1539bee57ab03';
+// const authToken = '01dd255ec4f178c58ede751ec3dc2e4f';
 
+// const client = twilio(accountSid, authToken);
+
+// // Send an SMS
+// client.messages
+//     .create({
+//         body: 'Hello, this is a test SMS!',
+//         from: '9315265049',
+//         to: '+919315265049',
+//     })
+//     .then((message) => console.log('SMS sent:', message.sid))
+//     .catch((error) => console.error('Error sending SMS:', error));
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);

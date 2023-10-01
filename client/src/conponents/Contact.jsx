@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../stylesheets/contact.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 
 function Contact() {
-    const [recipientEmail, setRecipientEmail] = useState('');
-    const [recipientName, setRecipientName] = useState('');
-    const [recipientMobile, setRecipientMobile] = useState('');
-    const [recipientWeb, setRecipientWeb] = useState('');
-    const [message, setMessage] = useState('');
+    // const [recipientEmail, setRecipientEmail] = useState('');
+    // const [recipientName, setRecipientName] = useState('');
+    // const [recipientMobile, setRecipientMobile] = useState('');
+    // const [recipientWeb, setRecipientWeb] = useState('');
+    // const [message, setMessage] = useState('');
     const validationSchema = Yup.object().shape({
         name: Yup.string().required('Name is required'),
         email: Yup.string().email('Invalid email address').required('Email is required'),
@@ -17,6 +17,7 @@ function Contact() {
         website: Yup.string().url('Invalid website URL').required('Website is required'),
         message: Yup.string().required('Message is required'),
     });
+
 
     const initialValues = {
         name: '',
@@ -26,18 +27,9 @@ function Contact() {
         message: '',
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
+    const handleSubmit = async (values) => {
         try {
-            const response = await axios.post('http://localhost:4000/send-email', {
-                recipientName,
-                recipientEmail,
-                recipientMobile,
-                recipientWeb,
-                message,
-            });
-
+            const response = await axios.post('http://localhost:4000/send-email', values);
             if (response.status === 200) {
                 alert('Email sent successfully');
             }
@@ -62,9 +54,6 @@ function Contact() {
                                 type="text"
                                 name="name"
                                 tabIndex="1"
-                                value={recipientName}
-                                onChange={(e) => setRecipientName(e.target.value)}
-                                required
                             />
                             <ErrorMessage className='errorMsgText' name="name" component="div" />
                         </fieldset>
@@ -75,9 +64,6 @@ function Contact() {
                                 type="email"
                                 name="email"
                                 tabIndex="2"
-                                required
-                                value={recipientEmail}
-                                onChange={(e) => setRecipientEmail(e.target.value)}
                             />
                             <ErrorMessage className='errorMsgText' name="email" component="div" />
                         </fieldset>
@@ -88,9 +74,6 @@ function Contact() {
                                 type="text"
                                 name="phone"
                                 tabIndex="3"
-                                value={recipientMobile}
-                                onChange={(e) => setRecipientMobile(e.target.value)}
-                                required
                             />
                             <ErrorMessage className='errorMsgText' name="phone" component="div" />
                         </fieldset>
@@ -101,9 +84,6 @@ function Contact() {
                                 type="url"
                                 name="website"
                                 tabIndex="4"
-                                value={recipientWeb}
-                                onChange={(e) => setRecipientWeb(e.target.value)}
-                                required
                             />
                             <ErrorMessage className='errorMsgText' name="website" component="div" />
                         </fieldset>
@@ -114,14 +94,11 @@ function Contact() {
                                 placeholder="Type your Message Here...."
                                 tabIndex="5"
                                 name="message"
-                                value={message}
-                                onChange={(e) => setMessage(e.target.value)}
-                                required
                             />
                             <ErrorMessage className='errorMsgText' name="message" component="div" />
                         </fieldset>
                         <fieldset>
-                            <button onClick={handleSubmit} name="submit" type="submit" id="contact-submit" data-submit="...Sending">
+                            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">
                                 Submit
                             </button>
                         </fieldset>
