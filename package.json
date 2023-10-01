@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start-backend": "cd backend && node server.js",
-    "start-frontend": "cd client && npm start",
-    "start": "npm run start-backend && npm run start-frontend"
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && node server.js",
+    "client": "cd client && npm start"
   },
   "author": "",
   "license": "ISC",

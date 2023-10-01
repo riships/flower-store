@@ -34,9 +34,10 @@
     "yup": "^1.2.0"
   },
   "scripts": {
-    "start": "npm start && npm run client",
-    "server": "node server.js",
-    "client": "cd backend && node server.js"
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
