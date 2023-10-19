@@ -1,19 +1,10 @@
 {
-  "name": "y",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd backend && node server.js",
-    "client": "cd client && npm start"
-  },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "concurrently": "^8.2.1"
   },
-  "dependencies": {
-    "react-scripts": "^5.0.1"
+  "scripts": {
+    "start": "concurrently \"npm run start-backend\" \"npm run start-frontend\"",
+    "start-backend": "cd backend && npm start",
+    "start-frontend": "cd client && npm start"
   }
 }
