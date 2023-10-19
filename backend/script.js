@@ -17,7 +17,7 @@ const pool = mysql.createPool({
     connectionLimit: 10,
     host: 'localhost',
     user: 'root',
-    password: 'rishi',
+    password: 'hrhk',
     database: 'mydatabase',
 });
 
@@ -43,16 +43,23 @@ app.post('/signup', (req, res) => {
     const { user_name, user_password, email_id } = req.body;
     pool.query(
         'INSERT INTO users (user_name, email_id, user_password) VALUES (?, ?, ?)',
-        [user_name, user_password, email_id],
+        [user_name, email_id, user_password], // Reorder the parameters to match the SQL statement
         (error, results) => {
-            if (results.length === 1) {
+            if (error) {
+                // Handle database error
+                console.error('Database error:', error);
+                res.status(500).json({ message: 'Internal server error' });
+            } else if (results.affectedRows === 1) {
+                // Signup was successful
                 res.json({ message: 'Signup successful' });
             } else {
-                res.status(401).json({ message: 'Enter valid Details' });
+                // Failed to insert a user (validation or other issues)
+                res.status(400).json({ message: 'Invalid details. User not created.' });
             }
         }
     );
 });
+
 app.post('/send-email', (req, res) => {
     const { name, email, message, phone, website } = req.body;
     const transporter = nodemailer.createTransport({

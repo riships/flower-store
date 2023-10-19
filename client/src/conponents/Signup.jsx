@@ -12,7 +12,7 @@ function SignupPage() {
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
-        console.log(...formData); 
+        console.log(...formData);
     };
 
     // Handle form submission
