@@ -1,88 +1,74 @@
-import React, { useState } from 'react';
+import React from 'react';
+// import '../stylesheets/login.css'; // Import the same CSS file as your login page
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import axios from 'axios';
+import { Button } from 'react-bootstrap'; // Import Bootstrap components
 
 function SignupPage() {
-    // Create state variables to store form data
-    const [formData, setFormData] = useState({
+    const validationSchema = Yup.object().shape({
+        username: Yup.string().required('Username is required'),
+        email: Yup.string().email('Invalid email address').required('Email is required'),
+        password: Yup.string().required('Password is required'),
+    });
+
+    const initialValues = {
         username: '',
         email: '',
         password: '',
-    });
-
-    // Handle input changes
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-        console.log(...formData);
     };
 
-    // Handle form submission
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        // Here, you can send the form data to your backend for processing
-        // using an HTTP POST request (e.g., with Axios or the Fetch API).
-
-        // For example:
-        fetch('http://localhost:4000/signup', {
-            method: 'POST',
-
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                // Handle the response from the server (e.g., success or error messages)
-                console.log(data);
-            })
-
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+    const handleSubmit = async (values) => {
+        try {
+            const response = await axios.post('http://localhost:4000/signup', values);
+            if (response.status === 200) {
+                alert('Signup successful');
+            }
+        } catch (error) {
+            console.error('Error signing up:', error);
+            alert('Signup failed');
+        }
     };
 
     return (
-        <div className="signup-container">
-            <h2>Sign Up</h2>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="username">Username</label>
-                    <input
-                        type="text"
-                        id="username"
-                        name="username"
-                        value={formData.username}
-                        onChange={handleInputChange}
-                        required
-                    />
+        <div>
+            <div className="login-container">
+                <div className="login-form">
+                    <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={validationSchema}>
+                        <Form>
+                            <h3>Signup</h3>
+                            <div className="form-group">
+                                <Field
+                                    placeholder="Username"
+                                    type="text"
+                                    name="username"
+                                    className="form-control"
+                                />
+                                <ErrorMessage className="text-danger" name="username" component="div" />
+                            </div>
+                            <div className="form-group">
+                                <Field
+                                    placeholder="Email"
+                                    type="email"
+                                    name="email"
+                                    className="form-control"
+                                />
+                                <ErrorMessage className="text-danger" name="email" component="div" />
+                            </div>
+                            <div className="form-group">
+                                <Field
+                                    placeholder="Password"
+                                    type="password"
+                                    name="password"
+                                    className="form-control"
+                                />
+                                <ErrorMessage className="text-danger" name="password" component="div" />
+                            </div>
+                            <Button type="submit" className="btn btn-primary btn-block">Sign Up</Button> {/* Use Bootstrap Button */}
+                        </Form>
+                    </Formik>
                 </div>
-
-                <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                    />
-                </div>
-
-                <div className="form-group">
-                    <label htmlFor="password">Password</label>
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        value={formData.password}
-                        onChange={handleInputChange}
-                        required
-                    />
-                </div>
-                <button onClick={handleSubmit} type="submit">Sign Up</button>
-            </form>
+            </div>
         </div>
     );
 }

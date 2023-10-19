@@ -32,10 +32,13 @@ const Login = ({ isOpen, onRequestClose, onLogin, onClose }) => {
             return; // Don't proceed with the login request
         }
         axios
-            .post('http://localhost:4000/login', { user_name, user_password })
+            .post('http://localhost:4000/login', { user_name, user_password }, {
+                timeout: 5000, // Set a 5-second timeout (adjust as needed)
+            })
             .then((response) => {
                 console.log(response.data.message);
                 setLoggedIn(true);
+
 
             })
             .catch((error) => {

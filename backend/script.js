@@ -4,6 +4,7 @@ const cors = require('cors');
 const mysql = require('mysql');
 const nodemailer = require('nodemailer');
 const twilio = require('twilio');
+const bcrypt = require('bcrypt');
 
 const app = express();
 const port = 4000;
@@ -17,7 +18,7 @@ const pool = mysql.createPool({
     connectionLimit: 10,
     host: 'localhost',
     user: 'root',
-    password: 'hrhk',
+    password: 'rishi',
     database: 'mydatabase',
 });
 
@@ -40,25 +41,55 @@ app.post('/login', (req, res) => {
 
 // Signup endpoint
 app.post('/signup', (req, res) => {
-    const { user_name, user_password, email_id } = req.body;
+    const { username, password, email } = req.body;
+
+    // Check if username and email are the same
+    if (username === email) {
+        return res.status(400).json({ message: 'Username and email cannot be the same' });
+    }
+
+    // Check if the username or email is already in use
     pool.query(
-        'INSERT INTO users (user_name, email_id, user_password) VALUES (?, ?, ?)',
-        [user_name, email_id, user_password], // Reorder the parameters to match the SQL statement
-        (error, results) => {
-            if (error) {
-                // Handle database error
-                console.error('Database error:', error);
+        'SELECT * FROM users WHERE user_name = ? OR email_id = ?',
+        [username, email],
+        (selectError, selectResults) => {
+            if (selectError) {
+                console.error('Database select error:', selectError);
                 res.status(500).json({ message: 'Internal server error' });
-            } else if (results.affectedRows === 1) {
-                // Signup was successful
-                res.json({ message: 'Signup successful' });
+            } else if (selectResults.length > 0) {
+                res.status(400).json({ message: 'Username or email already in use' });
             } else {
-                // Failed to insert a user (validation or other issues)
-                res.status(400).json({ message: 'Invalid details. User not created.' });
+                // Username and email are unique; proceed with user registration
+
+                // Hash the user's password using bcrypt
+                bcrypt.hash(password, 10, (hashErr, hash) => {
+                    if (hashErr) {
+                        console.error('Password hashing error:', hashErr);
+                        res.status(500).json({ message: 'Internal server error' });
+                    } else {
+                        // Now you can insert the hashed password into the database
+                        pool.query(
+                            'INSERT INTO users (user_name, email_id, user_password) VALUES (?, ?, ?)',
+                            [username, email, hash],
+                            (error, results) => {
+                                if (error) {
+                                    console.error('Database insert error:', error);
+                                    res.status(500).json({ message: 'Internal server error' });
+                                } else if (results.affectedRows === 1) {
+                                    res.json({ message: 'Signup successful' });
+                                } else {
+                                    res.status(400).json({ message: 'Invalid details. User not created.' });
+                                }
+                            }
+                        );
+                    }
+                });
             }
         }
     );
 });
+
+
 
 app.post('/send-email', (req, res) => {
     const { name, email, message, phone, website } = req.body;
