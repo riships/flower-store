@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mysql = require('mysql');
 const nodemailer = require('nodemailer');
-const twilio = require('twilio');
+// const twilio = require('twilio');
 const bcrypt = require('bcrypt');
 
 const app = express();
@@ -18,7 +18,7 @@ const pool = mysql.createPool({
     connectionLimit: 10,
     host: 'localhost',
     user: 'root',
-    password: 'rishi',
+    password: 'hrhk',
     database: 'mydatabase',
 });
 
