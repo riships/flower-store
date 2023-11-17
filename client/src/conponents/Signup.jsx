@@ -1,5 +1,4 @@
 import React from 'react';
-// import '../stylesheets/login.css'; // Import the same CSS file as your login page
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
@@ -34,7 +33,10 @@ function SignupPage() {
         <div>
             <div className="login-container">
                 <div className="login-form">
-                    <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={validationSchema}>
+                    <Formik
+                        initialValues={initialValues}
+                        onSubmit={handleSubmit}
+                        validationSchema={validationSchema}>
                         <Form>
                             <h3>Signup</h3>
                             <div className="form-group">
@@ -44,7 +46,10 @@ function SignupPage() {
                                     name="username"
                                     className="form-control"
                                 />
-                                <ErrorMessage className="text-danger" name="username" component="div" />
+                                <ErrorMessage
+                                    className="text-danger"
+                                    name="username"
+                                    component="div" />
                             </div>
                             <div className="form-group">
                                 <Field
@@ -53,7 +58,10 @@ function SignupPage() {
                                     name="email"
                                     className="form-control"
                                 />
-                                <ErrorMessage className="text-danger" name="email" component="div" />
+                                <ErrorMessage
+                                    className="text-danger"
+                                    name="email"
+                                    component="div" />
                             </div>
                             <div className="form-group">
                                 <Field
@@ -62,9 +70,16 @@ function SignupPage() {
                                     name="password"
                                     className="form-control"
                                 />
-                                <ErrorMessage className="text-danger" name="password" component="div" />
+                                <ErrorMessage
+                                    className="text-danger"
+                                    name="password"
+                                    component="div" />
                             </div>
-                            <Button type="submit" className="btn btn-primary btn-block">Sign Up</Button> {/* Use Bootstrap Button */}
+                            <Button
+                                type="submit"
+                                className="btn btn-primary btn-block">
+                                Sign Up
+                            </Button>
                         </Form>
                     </Formik>
                 </div>

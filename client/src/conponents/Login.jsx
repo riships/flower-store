@@ -29,11 +29,13 @@ const Login = ({ isOpen, onRequestClose, onLogin, onClose }) => {
     const handleLogin = () => {
         if (!user_name || !user_password) {
             console.error('Username and password are required');
-            return; // Don't proceed with the login request
+            return;
+            // Don't proceed with the login request
         }
         axios
             .post('http://localhost:4000/login', { user_name, user_password }, {
-                timeout: 5000, // Set a 5-second timeout (adjust as needed)
+                timeout: 5000,
+                // Set a 5-second timeout (adjust as needed)
             })
             .then((response) => {
                 console.log(response.data.message);
@@ -78,11 +80,9 @@ const Login = ({ isOpen, onRequestClose, onLogin, onClose }) => {
                                             onChange={(e) => setUsername(e.target.value)}
                                             required />
                                     </Form.Group>
-
                                     <Form.Group
                                         className="mb-3"
-                                        controlId="formBasicPassword"
-                                    >
+                                        controlId="formBasicPassword">
                                         <Form.Label>Password</Form.Label>
                                         <Form.Control
                                             type="password"
@@ -93,8 +93,7 @@ const Login = ({ isOpen, onRequestClose, onLogin, onClose }) => {
                                     </Form.Group>
                                     <Form.Group
                                         className="mb-3"
-                                        controlId="formBasicCheckbox"
-                                    >
+                                        controlId="formBasicCheckbox">
                                         <p className="small">
                                             <a className="text-primary" href="#!">
                                                 Forgot password?
@@ -103,8 +102,7 @@ const Login = ({ isOpen, onRequestClose, onLogin, onClose }) => {
                                     </Form.Group>
                                     <div className="d-grid">
                                         <Button variant="primary" type="submit"
-                                            onClick={handleLogin}
-                                        >
+                                            onClick={handleLogin}>
                                             Login
                                         </Button>
                                     </div>
@@ -138,7 +136,7 @@ const Login = ({ isOpen, onRequestClose, onLogin, onClose }) => {
                                     Already have an account?{' '}
                                     <span
                                         className="text-primary fw-bold cursor-pointer"
-                                            onClick={() => setLoginMode(true)}                                    >
+                                        onClick={() => setLoginMode(true)}                                    >
                                         Log In
                                     </span>
                                 </>

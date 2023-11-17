@@ -3,9 +3,14 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mysql = require('mysql');
 const nodemailer = require('nodemailer');
-const twilio = require('twilio');
+// const twilio = require('twilio');
 const bcrypt = require('bcrypt');
-
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const JwtStrategy = require('passport-jwt').Strategy;
+const ExtractJwt = require('passport-jwt').ExtractJwt;
+const jwt = require('jsonwebtoken');
+// const { Sequelize, Op } = require('sequelize');
 const app = express();
 const port = 4000;
 
@@ -18,10 +23,43 @@ const pool = mysql.createPool({
     connectionLimit: 10,
     host: 'localhost',
     user: 'root',
-    password: 'rishi',
+    password: 'hrhk',
     database: 'mydatabase',
 });
+const sequelize = new Sequelize('mydatabase', 'root', 'hrhk', {
+    host: 'localhost',
+    dialect: 'mysql',
+});
 
+const User = require('./models/user')(sequelize);
+sequelize.sync();
+
+
+
+const jwtOptions = {
+    jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+    secretOrKey: 'your_secret_key',
+};
+
+passport.use(new LocalStrategy(
+    (username, password, done) => {
+        const user = users.find(u => u.username === username && u.password === password);
+        if (user) {
+            return done(null, user);
+        }
+        return done(null, false);
+    }
+));
+
+passport.use(new JwtStrategy(jwtOptions, (payload, done) => {
+    const user = users.find(u => u.id === payload.sub);
+    if (user) {
+        return done(null, user);
+    }
+    return done(null, false);
+}));
+
+app.use(passport.initialize());
 // Login endpoint
 app.post('/login', (req, res) => {
     const { user_name, user_password } = req.body;

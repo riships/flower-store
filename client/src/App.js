@@ -12,9 +12,9 @@ import Errorpage from "../src/conponents/Errorpage";
 import Cart from "../src/conponents/Cart";
 import AllProduct from "./conponents/AllProduct";
 import Footer from "./conponents/Footer";
-import Login from "./conponents/Login";
+import Login from './conponents/Login';
 import Allprofilebtn from "./conponents/Allprofilebtn";
-import Signup from "./conponents/Signup"; 
+import Signup from "./conponents/Signup";
 
 const Wrapper = styled.section`
     height:70px;
