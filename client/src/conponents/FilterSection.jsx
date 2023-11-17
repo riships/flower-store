@@ -14,18 +14,17 @@ function FilterSection() {
     // TO GET THE UNIQUE DATA OF EACH FIELD
     const getUniqueData = (data, property) => {
         let newVal = data.map((curEle) => {
+            // console.log(curEle[property]);
             return curEle[property];
         })
         newVal = ["All", ...new Set(newVal)];
         // console.log(newVal);
         return newVal;
     }
-    // console.log(ALL, "all-data");
 
 
     //WE NEED UNIQUE DATA
     const categoryOnlyData = getUniqueData(all_flowers, "sub_category");
-    // console.log(categoryOnlyData, 'data')
     return (<>
         <Wraper>
             <div className='filter--search'>
@@ -45,9 +44,8 @@ function FilterSection() {
 
                 {
                     categoryOnlyData.map((curElem, index) => {
-                        return <FilterDiv>
-                            <FilterButton key={index}
-                                className={curElem === category ? "button active" : "button"}
+                        return <FilterDiv key={index}>
+                            <FilterButton className={curElem === category ? "button active" : "button"}
                                 type='button'
                                 name='category'
                                 value={curElem}
