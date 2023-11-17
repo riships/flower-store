@@ -16,7 +16,7 @@ function FilterSection() {
         let newVal = data.map((curEle) => {
             return curEle[property];
         })
-        newVal = ["all", ...new Set(newVal)];
+        newVal = ["All", ...new Set(newVal)];
         // console.log(newVal);
         return newVal;
     }
