@@ -10,11 +10,11 @@ import Singleproduct from "../src/conponents/Singleproduct";
 import styled from 'styled-components';
 import Errorpage from "../src/conponents/Errorpage";
 import Cart from "../src/conponents/Cart";
-import AllProduct from "./conponents/AllProduct";
 import Footer from "./conponents/Footer";
 import Login from './conponents/Login';
 import Allprofilebtn from "./conponents/Allprofilebtn";
 import Signup from "./conponents/Signup";
+import Store from "./conponents/Store";
 
 const Wrapper = styled.section`
     height:70px;
@@ -47,7 +47,7 @@ function App() {
     },
     {
       text: "Store",
-      link: "/allproduct"
+      link: "/store"
     },
   ];
   return (
@@ -83,7 +83,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
-        <Route path='/allproduct' element={<AllProduct />} />
+        <Route path='/store' element={<Store />} />
         <Route path="/singleproduct/:id" element={<Singleproduct />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/allprofilebtn" element={<Allprofilebtn />} />

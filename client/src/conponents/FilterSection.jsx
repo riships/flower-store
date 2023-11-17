@@ -27,19 +27,19 @@ function FilterSection() {
     const categoryOnlyData = getUniqueData(all_flowers, "sub_category");
     return (<>
         <Wraper>
-            <div className='filter--search'>
-                <form onSubmit={(e) => e.preventDefault()}>
-                    <input
-                        className='search--input'
-                        type="text"
-                        name="text"
-                        value={text}
-                        onChange={updateFilterValue}
-                        placeholder='SEARCH'
-                    />
-                </form>
-            </div>
             <FilterCategory>
+                <FilterDiv>
+                    <form onSubmit={(e) => e.preventDefault()}>
+                        <input
+                            className='search--input'
+                            type="text"
+                            name="text"
+                            value={text}
+                            onChange={updateFilterValue}
+                            placeholder='SEARCH'
+                        />
+                    </form>
+                </FilterDiv>
                 <h3>Filter By Category</h3>
 
                 {
@@ -64,6 +64,8 @@ function FilterSection() {
     )
 }
 const Wraper = styled.section`
+display:flex;
+display-direction:row;
 height:auto;
 `
 const FilterDiv = styled.div`
@@ -89,8 +91,6 @@ const FilterButton = styled.button`
 const FilterCategory = styled.div`
     display: flex;
     flex-direction: column;
-    width: 15%;
     float: left;
-    margin-left: 8rem;
 `
 export default FilterSection
