@@ -28,6 +28,7 @@ function FilterSection() {
     return (<>
         <Wraper>
             <FilterCategory>
+                <h4>Search</h4>
                 <FilterDiv>
                     <form onSubmit={(e) => e.preventDefault()}>
                         <input
@@ -40,7 +41,7 @@ function FilterSection() {
                         />
                     </form>
                 </FilterDiv>
-                <h3>Filter By Category</h3>
+                <h4>Filter By Category</h4>
 
                 {
                     categoryOnlyData.map((curElem, index) => {
