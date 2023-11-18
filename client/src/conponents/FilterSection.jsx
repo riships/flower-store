@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useFilterContext } from './context/filter-context'
 import '../stylesheets/filterSection.css'
+import Select from 'react-select';
 
 function FilterSection() {
     const {
         updateFilterValue,
         all_flowers,
-        filters: { text, category },
+        filters: { text },
     } = useFilterContext();
 
 
@@ -21,10 +22,33 @@ function FilterSection() {
         // console.log(newVal);
         return newVal;
     }
+    const categoryOnlyData = getUniqueData(all_flowers, "sub_category");
+    // console.log(categoryOnlyData);
+
+    let objectData = categoryOnlyData.map((curElem, index) => ({
+        label: curElem,
+        value: curElem,
+        key: index
+    }));
+    // console.log(objectData);
+    const [selectedOption, setSelectedOption] = useState(null)
+    const handleSelectChange = (selectedOption) => {
+        if (!selectedOption || selectedOption === null) {
+            setSelectedOption("All");
+            updateFilterValue({ target: { name: "category", value: "All" } });
+        } else {
+            setSelectedOption(selectedOption);
+            updateFilterValue({
+                target: { name: "category", value: selectedOption.label },
+            });
+            // console.log(selectedOption.label);
+        }
+    };
+
+
 
 
     //WE NEED UNIQUE DATA
-    const categoryOnlyData = getUniqueData(all_flowers, "sub_category");
     return (<>
         <Wraper>
             <FilterCategory>
@@ -42,21 +66,17 @@ function FilterSection() {
                     </form>
                 </FilterDiv>
                 <h4>Filter By Category</h4>
+                <FilterDiv>
+                    <Select
+                        value={selectedOption}
+                        onChange={handleSelectChange}
+                        options={objectData}
+                        isSearchable={false}
+                    />
+                </FilterDiv>
 
-                {
-                    categoryOnlyData.map((curElem, index) => {
-                        return <FilterDiv key={index}>
-                            <FilterButton className={curElem === category ? "button active" : "button"}
-                                type='button'
-                                name='category'
-                                value={curElem}
-                                onClick={updateFilterValue}
-                            >
-                                {curElem}
-                            </FilterButton>
-                        </FilterDiv>
-                    })
-                }
+
+
             </FilterCategory>
         </Wraper>
 
@@ -74,21 +94,21 @@ const FilterDiv = styled.div`
   width:80%;
   `
 
-const FilterButton = styled.button`
-    transition: all.2s ease-in-out;
-    background: none;
-    font-weight: 700;
-    font-size: 12px;
-    cursor: pointer;
-    outline: none;
-    opacity: 0.4;
-    border: none;
-    color: #fff00;
+// const FilterButton = styled.button`
+//     transition: all.2s ease-in-out;
+//     background: none;
+//     font-weight: 700;
+//     font-size: 12px;
+//     cursor: pointer;
+//     outline: none;
+//     opacity: 0.4;
+//     border: none;
+//     color: #fff00;
 
-.button:hover,
-.button.active {
-    opacity: 1;
-} `
+// .button:hover,
+// .button.active {
+//     opacity: 1;
+// } `
 const FilterCategory = styled.div`
     display: flex;
     flex-direction: column;

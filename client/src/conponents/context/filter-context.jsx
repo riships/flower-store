@@ -36,10 +36,12 @@ export const FilterContextProvider = ({ children }) => {
     };
     // update the filter value
     const updateFilterValue = (event) => {
-        let name = event.target.name;
-        let value = event.target.value;
+        if (event && event.target) {
+            let name = event.target.name;
+            let value = event.target.value;
 
-        return dispatch({ type: "UPDATE_FILTER_VALUES", payload: { name, value } })
+            return dispatch({ type: "UPDATE_FILTER_VALUES", payload: { name, value } })
+        }
     };
 
 
