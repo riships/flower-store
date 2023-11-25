@@ -1,22 +1,30 @@
 import React from 'react'
 import FilterSection from './FilterSection'
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import AllProduct from './AllProduct';
+import styled from 'styled-components'
+
+
+
+
 function Store() {
     return (
         <>
-            <Container>
+            <ContainerCustm>
                 <Row>
-                    <Col md={3}>
+                    <Col md={2}>
                         <FilterSection />
                     </Col>
-                    <Col md={9}>
+                    <Col md={10}>
                         <AllProduct />
                     </Col>
                 </Row >
-            </Container>
+            </ContainerCustm>
         </>
     )
 }
+const ContainerCustm = styled.div`
+    width:95%;
+`
 
 export default Store

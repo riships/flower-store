@@ -52,7 +52,6 @@ function FilterSection() {
     return (<>
         <Wraper>
             <FilterCategory>
-                <h4>Search</h4>
                 <FilterDiv>
                     <form onSubmit={(e) => e.preventDefault()}>
                         <input
@@ -65,7 +64,7 @@ function FilterSection() {
                         />
                     </form>
                 </FilterDiv>
-                <h4>Filter By Category</h4>
+                <h5>Filter By Category</h5>
                 <FilterDiv>
                     <Select
                         value={selectedOption}

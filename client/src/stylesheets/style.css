@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
     margin: 0 auto;
-    padding: 0;
+    /* padding: 0; */
     font-family: 'Tahoma';
     font-style: normal;
     /* background-color: #fdfdfd; */
@@ -456,15 +456,18 @@
     height: auto;
     font-family: 'Baloo Paaji 2', cursive;
     padding: 10px;
+    gap: 10px;
 }
 
-.grid-container {
+/* .grid-container {
+    display: grid;
     grid-template-columns: auto auto auto;
     align-items: center;
     justify-content: center;
     box-shadow: rgba(0, 0, 0, 0.7);
-    margin: 25px;
-}
+    margin: 25x;
+    }
+                                */
 
 .crd {
     display: flex;
